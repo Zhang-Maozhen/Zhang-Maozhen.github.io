@@ -100,7 +100,7 @@ features:
 extensions:
   cms:
     branch: main
-    local_backend: false
+    local_backend: true
   academicons:
     enable: true
 
@@ -109,3 +109,8 @@ extensions:
 security:
   # Allow frame for embedding speaker notes in slides
   allow_frame: true
+
+icons:
+  icon: cv
+  icon_pack: ai
+  link: uploads/resume.pdf
