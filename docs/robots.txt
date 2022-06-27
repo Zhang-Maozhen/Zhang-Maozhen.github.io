@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://Zhang-maozhen.github.io/sitemap.xml
