@@ -1,0 +1,1 @@
+修改config.yaml配置文件，将生成的静态网站从public迁移到docs（为了迎合githubPage的静态展示目录）

@@ -5,7 +5,7 @@
 
 title: Academic # Website name
 baseURL: 'https://Zhang-maozhen.github.io/' # Website URL
-
+publishDir : 'docs'
 ############################
 ## LANGUAGE
 ############################

@@ -1,9 +1,9 @@
 ---
-title: Example Project
-summary: An example of using the in-built project page.
+title: 机器学习
+summary: 正在进行的机器学习的学习.
 tags:
   - Deep Learning
-date: '2016-04-27T00:00:00Z'
+date: '2022-06-13T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
@@ -13,10 +13,10 @@ image:
   focal_point: Smart
 
 links:
-  - icon: twitter
+  - icon: github
     icon_pack: fab
     name: Follow
-    url: https://twitter.com/georgecushen
+    url: https://github.com/Zhang-maozhen
 url_code: ''
 url_pdf: ''
 url_slides: ''

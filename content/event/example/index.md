@@ -1,7 +1,7 @@
 ---
-title: Example Talk
+title: 暂时啥都没有
 
-event: Wowchemy Conference
+event: 该目录留存
 event_url: https://example.org
 
 location: Wowchemy HQ
@@ -12,8 +12,8 @@ address:
   postcode: '94305'
   country: United States
 
-summary: An example talk using Wowchemy's Markdown slides feature.
-abstract: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellusac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam.'
+summary: 目前正处于学习阶段.
+abstract: '这里是一串摘要'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -24,7 +24,7 @@ all_day: false
 # Schedule page publish date (NOT talk date).
 publishDate: '2017-01-01T00:00:00Z'
 
-authors: []
+authors: ['Zhang Maozhen']
 tags: []
 
 # Is this a featured talk? (true/false)
