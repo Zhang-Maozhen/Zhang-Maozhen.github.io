@@ -1025,8 +1025,7 @@ It can also automatically calculate the correct dimension if a -1 is passed in. 
       <link>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
       <guid>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-      <description>&lt;p&gt;命令记录，持续更新&lt;/p&gt;
-&lt;h1 id=&#34;conda&#34;&gt;Conda&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;conda&#34;&gt;Conda&lt;/h1&gt;
 &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
 &lt;h3 id=&#34;对于conda的一些理解&#34;&gt;对于conda的一些理解&lt;/h3&gt;
 &lt;p&gt;作为一个虚拟环境配置管理软件，可以在电脑自身环境外创造虚拟环境(base是自身创造的虚拟环境)&lt;/p&gt;
