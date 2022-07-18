@@ -14,9 +14,9 @@
     
     <item>
       <title>LaTeX安装及语法</title>
-      <link>https://Zhang-maozhen.github.io/post/latex/</link>
+      <link>https://Zhang-maozhen.github.io/post/latex/latex/</link>
       <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/post/latex/</guid>
+      <guid>https://Zhang-maozhen.github.io/post/latex/latex/</guid>
       <description>&lt;h1 id=&#34;latex&#34;&gt;Latex&lt;/h1&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;h3 id=&#34;windows&#34;&gt;windows&lt;/h3&gt;
@@ -1022,9 +1022,9 @@ It can also automatically calculate the correct dimension if a -1 is passed in. 
     
     <item>
       <title>命令与环境配置</title>
-      <link>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <link>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;h1 id=&#34;conda&#34;&gt;Conda&lt;/h1&gt;
 &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
 &lt;h3 id=&#34;对于conda的一些理解&#34;&gt;对于conda的一些理解&lt;/h3&gt;
