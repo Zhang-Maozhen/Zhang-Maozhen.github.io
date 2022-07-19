@@ -1,0 +1,1678 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Zhang Maozhen" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="深度学习评价指标 文章来源
+深度学习模型的泛化性能通常根据评价指标对其进行衡量。在对比不同的模型的性能时，使用不同的指标往往会导致不同的评判结果。因此针对具体的数据、模型和任务需求应该选取与之对应的评价指标。本文主要介绍深度学习中分类及回归任务中常用的评价指标。
+1. 回归任务中常用的评价指标
+(1) 平均绝对误差(Mean Absolute Error, MAE):
+平均绝对误差表示预测值和观测值之间绝对误差的平均值, 其数学表达式为： $$ MAE=\frac{1}{n}\sum_{i=1}^n\vert\hat y_i - y_i\vert $$ 其中$y_i$表示真实值，$\hat y_i$表示预测值
+import numpy as np def mae_value(y_true, y_pred): &#34;&#34;&#34; 参数: y_true -- 测试集目标真实值 y_pred -- 测试集目标预测值 返回: mae -- MAE 评价指标 &#34;&#34;&#34; n = len(y_true) mae = sum(np." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@wowchemy" />
+    <meta property="twitter:creator" content="@wowchemy" />
+  
+  <meta property="og:site_name" content="Academic" />
+  <meta property="og:url" content="https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" />
+  <meta property="og:title" content="Academic" />
+  <meta property="og:description" content="深度学习评价指标 文章来源
+深度学习模型的泛化性能通常根据评价指标对其进行衡量。在对比不同的模型的性能时，使用不同的指标往往会导致不同的评判结果。因此针对具体的数据、模型和任务需求应该选取与之对应的评价指标。本文主要介绍深度学习中分类及回归任务中常用的评价指标。
+1. 回归任务中常用的评价指标
+(1) 平均绝对误差(Mean Absolute Error, MAE):
+平均绝对误差表示预测值和观测值之间绝对误差的平均值, 其数学表达式为： $$ MAE=\frac{1}{n}\sum_{i=1}^n\vert\hat y_i - y_i\vert $$ 其中$y_i$表示真实值，$\hat y_i$表示预测值
+import numpy as np def mae_value(y_true, y_pred): &#34;&#34;&#34; 参数: y_true -- 测试集目标真实值 y_pred -- 测试集目标预测值 返回: mae -- MAE 评价指标 &#34;&#34;&#34; n = len(y_true) mae = sum(np." /><meta property="og:image" content="https://Zhang-maozhen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://Zhang-maozhen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+    
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"
+  },
+  "headline": "",
+  
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Zhang Maozhen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Academic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Zhang-maozhen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "深度学习评价指标 文章来源\n深度学习模型的泛化性能通常根据评价指标对其进行衡量。在对比不同的模型的性能时，使用不同的指标往往会导致不同的评判结果。因此针对具体的数据、模型和任务需求应该选取与之对应的评价指标。本文主要介绍深度学习中分类及回归任务中常用的评价指标。\n1. 回归任务中常用的评价指标\n(1) 平均绝对误差(Mean Absolute Error, MAE):\n平均绝对误差表示预测值和观测值之间绝对误差的平均值, 其数学表达式为： $$ MAE=\\frac{1}{n}\\sum_{i=1}^n\\vert\\hat y_i - y_i\\vert $$ 其中$y_i$表示真实值，$\\hat y_i$表示预测值\nimport numpy as np def mae_value(y_true, y_pred): \u0026#34;\u0026#34;\u0026#34; 参数: y_true -- 测试集目标真实值 y_pred -- 测试集目标预测值 返回: mae -- MAE 评价指标 \u0026#34;\u0026#34;\u0026#34; n = len(y_true) mae = sum(np."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Academic</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="27f80becc423e7e70f91cfe36cb5fb37" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Academic</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Academic</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#talks"><span>Talks</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1></h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 0001
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="深度学习评价指标">深度学习评价指标</h1>
+<p><a href="https://mp.weixin.qq.com/s/Ui6nCLOKKmwFYOITDYQ19A" target="_blank" rel="noopener">文章来源</a></p>
+<p>深度学习模型的泛化性能通常根据评价指标对其进行衡量。在对比不同的模型的性能时，使用不同的指标往往会导致不同的评判结果。因此针对具体的数据、模型和任务需求应该选取与之对应的评价指标。本文主要介绍深度学习中分类及回归任务中常用的评价指标。</p>
+<p><strong>1.</strong> <strong>回归任务中常用的评价指标</strong></p>
+<p>(1) 平均绝对误差(Mean Absolute Error, MAE):</p>
+<p>平均绝对误差表示预测值和观测值之间绝对误差的平均值, 其数学表达式为：
+$$
+MAE=\frac{1}{n}\sum_{i=1}^n\vert\hat y_i - y_i\vert
+$$
+其中$y_i$表示真实值，$\hat y_i$表示预测值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mae_value</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34; 
+</span></span></span><span class="line"><span class="cl"><span class="s2">参数: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">y_true -- 测试集目标真实值 
+</span></span></span><span class="line"><span class="cl"><span class="s2">y_pred -- 测试集目标预测值 
+</span></span></span><span class="line"><span class="cl"><span class="s2">返回: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">mae -- MAE 评价指标 
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>  
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="n">mae</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">))</span><span class="o">/</span><span class="n">n</span>  
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">mae</span>
+</span></span></code></pre></div><p><strong>(2) 平均绝对百分比误差(Mean Absolute Percentage Error, MAPE)</strong></p>
+<p>平均绝对百分比误差是一种相对度量，其将 MAE 尺度确定为百分比单位而不是变量的单位。其数学表达式为：
+$$
+MAPE=\frac{100%}{n}\sum_{i=1}^n\vert\frac{\hat y_i-y_i}{y_i}\vert
+$$
+其中$y_i$表示真实值，$\hat y_i$表示预测值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mape</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34; 
+</span></span></span><span class="line"><span class="cl"><span class="s2">参数: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">y_true -- 测试集目标真实值 
+</span></span></span><span class="line"><span class="cl"><span class="s2">y_pred -- 测试集目标预测值 
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">返回: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">mape -- MAPE 评价指标 
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="n">mape</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">/</span><span class="n">y_true</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="o">*</span><span class="mi">100</span>  
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">mape</span> 
+</span></span></code></pre></div><p><strong>(3) 均方误差(Mean Square Error, MSE)</strong></p>
+<p>均方误差是预测值和观测值差值的平方和的平均数，其数学表达式为：
+$$
+MSE=\frac{1}{n}\sum_{i=1}^n(\hat y_i-y_i)^2
+$$
+其中$y_i$表示真实值，$\hat y_i$表示预测值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>   
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mse_value</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34; 
+</span></span></span><span class="line"><span class="cl"><span class="s2">参数: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">y_true -- 测试集目标真实值 
+</span></span></span><span class="line"><span class="cl"><span class="s2">y_pred -- 测试集目标预测值 
+</span></span></span><span class="line"><span class="cl"><span class="s2"> 
+</span></span></span><span class="line"><span class="cl"><span class="s2">返回: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">mse -- MSE 评价指标 
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>  
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="n">mse</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">))</span><span class="o">/</span><span class="n">n</span>  
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">mse</span> 
+</span></span></code></pre></div><p><strong>(4) 均方根误差(Root Mean Square Error , RMSE)</strong></p>
+<p>均方根误差是预测值与真实值偏差的平方与观测次数n比值的平方根. 其数学表达式为：
+$$
+RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n(\hat y_i - y_i)^2}
+$$
+其中$y_i$表示真实值，$\hat y_i$表示预测值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rmse</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">res_rmse</span>
+</span></span></code></pre></div><p><strong>2.</strong> <strong>语义分割任务中常用的评价指标</strong></p>
+<p>**(1)**<strong>混淆矩阵</strong>：</p>
+<p>混淆矩阵也称为误差矩阵，是表示精度评价的一种标准格式，其是以大小为$N\time N$的矩阵形式来表示。以二分类为例，其混淆矩阵如下：</p>
+<table>
+<thead>
+<tr>
+<th>真实情况\预测情况</th>
+<th>正例</th>
+<th>反例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>正例</strong></td>
+<td>TP(真正例)</td>
+<td>FN(假反例)</td>
+</tr>
+<tr>
+<td><strong>反例</strong></td>
+<td>FP(假正例)</td>
+<td>TN(真反例)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(2)总体分类精度（Overall Accuracy，简称ac）</strong></p>
+<p>分类正确的样本个数占所有样本个数的比例，其数学表达式如下：
+$$
+acc=\frac{TP+TN}{TP+FN+FP+TN}
+$$
+<strong>(3)准确率(Precision)、召回率(Recall)、F1</strong></p>
+<p>准确率表示的是预测为正例的数据中预测正例的概率,召回率表示真实为正例的数据中预测正例的概率，其公式分别为
+$$
+Precision=\frac{TP}{TP+FP}\
+Recal=\frac{TP}{TP+FN}
+$$
+准确率和召回率是一对矛盾的度量。一般情况下，准确率高时，召回率通常较低，而召回率高，准确率通常较低。为综合考虑准确率和召回率两者的性能，提出F1度量，其是基于准确率和召回率的调和平均定义的，即F1满足
+$$
+\frac{1}{F1}=\frac{1}{2}(\frac{1}{Precision}+\frac{1}{Recall})
+$$
+可知F1的公式为
+$$
+F1=2\cdot\frac{Precision\cdot Recall}{Precision+Recall}
+$$
+其中$\beta&gt;0$度量了召回率对准确率的相对重要性，$\beta=1$时退化为标准的F1； $\beta&gt;1$时召回率有更多的影响；$\beta&lt;1$ 时准确率有更大的影响。</p>
+<p><strong>(4)ROC曲线和AUC</strong></p>
+<p>ROC全称为“受试者工作特征”(Receiver Operating Characteristic)曲线，其源于“二战”中用于敌机检测的雷达信号分析技术。根据预测结果对样例进行排序，按此顺序逐个把样本作为正例进行预测，每次计算真正例率 (True Positive Rate, 简称TPR)和假正例率(False Positive Rate, 简称FPR)的值，并以FPR为横轴、TPR为纵轴作图，得到ROC曲线，其TPR、FPR的数学表达式为：
+$$
+TPR=\frac{TP}{TP+FN},FPR=\frac{FP}{TP+Fp}
+$$
+其中AUC表示ROC曲线下的面积，在此利用有限样例来展示ROC曲线与AUC，如下图所示：</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/640.jpeg" alt="图片" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<center>（图片来自知乎，感谢分享）</center>
+<p>ROC绘制代码如下(代码来自CSDN, 感谢分享)：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span><span class="n">GridSearchCV</span><span class="p">,</span><span class="n">StratifiedKFold</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span><span class="p">,</span> <span class="n">datasets</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interp</span>  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">draw_auc</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pd_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;KILLED&#34;</span><span class="p">]))</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pd_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5000</span><span class="p">)[</span><span class="s2">&#34;KILLED&#34;</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">random_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">classifier</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>  <span class="c1"># 注意这里，probability=True,需要，不然预测的时候会出现异常。另外rbf核效果更好些。  </span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="n">mean_tpr</span> <span class="o">=</span> <span class="mf">0.0</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">mean_fpr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">all_tpr</span> <span class="o">=</span> <span class="p">[]</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cv</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">        <span class="c1"># 通过训练数据，使用svm线性核建立模型，并对测试集进行测试，求  出预测得分  </span>
+</span></span><span class="line"><span class="cl">        <span class="n">probas_</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">train</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">train</span><span class="p">])</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">test</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">        <span class="c1"># Compute ROC curve and area the curve  </span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 通过roc_curve()函数，求出fpr和tpr，以及阈值  </span>
+</span></span><span class="line"><span class="cl">        <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">test</span><span class="p">],</span> <span class="n">probas_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">mean_tpr</span> <span class="o">+=</span> <span class="n">interp</span><span class="p">(</span><span class="n">mean_fpr</span><span class="p">,</span> <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>  <span class="c1"># 对mean_tpr在mean_fpr处进行插值，通过scipy包调用interp()函数  </span>
+</span></span><span class="line"><span class="cl">        <span class="n">mean_tpr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># 初始处为0  </span>
+</span></span><span class="line"><span class="cl">        <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="c1"># 画图，只需要plt.plot(fpr,tpr),变量roc_auc只是记录auc的值，通过auc()函数能计算出来  </span>
+</span></span><span class="line"><span class="cl">        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ROC fold </span><span class="si">%d</span><span class="s1"> (area = </span><span class="si">%0.2f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">roc_auc</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">        <span class="c1"># 画对角线  </span>
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Luck&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="n">mean_tpr</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cv</span><span class="p">))</span>  <span class="c1"># 在mean_fpr100个点，每个点处插值插值多次取平均  </span>
+</span></span><span class="line"><span class="cl">    <span class="n">mean_tpr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 坐标最后一个点为（1,1）  </span>
+</span></span><span class="line"><span class="cl">    <span class="n">mean_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">mean_fpr</span><span class="p">,</span> <span class="n">mean_tpr</span><span class="p">)</span>  <span class="c1"># 计算平均AUC值  </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 画平均ROC曲线  </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print mean_fpr,len(mean_fpr)  </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print mean_tpr  </span>
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mean_fpr</span><span class="p">,</span> <span class="n">mean_tpr</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mean ROC (area = </span><span class="si">%0.2f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">mean_auc</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Receiver operating characteristic example&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&#34;lower right&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+</span></span></code></pre></div><p><strong>(5)IOU和mIOU (均以二分类为例)</strong></p>
+<p>Intersection overUnion(IOU：交并比): 对某一类别预测结果和真实值的交集与并集的比值，其公式为：
+$$
+\rm{IOU}=\frac{TP}{TP+FP+FN}
+$$
+Mean Intersection overUnion(mIOU，均交并比)：对<strong>每一类</strong>预测的结果和真实值的交集与并集的比值求平均的结果，其公式为:
+$$
+\rm{mIOU}=\frac{IOU_{正例}+IOU_{反例}}{2}=\frac{TP}{TP+FP+FN}+\frac{TN}{TN+FN+FP}
+$$
+<strong>代码(Pytorch)：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">mmcv</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1">#acc, precision, recall, IOU, mIOU的代码最终表现total_area_to_metrics   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#F1的代码   </span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f_score</span><span class="p">(</span><span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">score</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">precision</span> <span class="o">*</span> <span class="n">recall</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="n">beta</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">precision</span><span class="p">)</span> <span class="o">+</span> <span class="n">recall</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">score</span>  
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">intersect_and_union</span><span class="p">(</span><span class="n">pred_label</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                    <span class="n">label</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                    <span class="n">num_classes</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                    <span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                    <span class="n">label_map</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>  
+</span></span><span class="line"><span class="cl">                    <span class="n">reduce_zero_label</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pred_label</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pred_label</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">((</span><span class="n">pred_label</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">mmcv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;unchanged&#39;</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">&#39;pillow&#39;</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">label_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">old_id</span><span class="p">,</span> <span class="n">new_id</span> <span class="ow">in</span> <span class="n">label_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">label</span><span class="p">[</span><span class="n">label</span> <span class="o">==</span> <span class="n">old_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_id</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">reduce_zero_label</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="p">[</span><span class="n">label</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="n">label</span> <span class="o">-</span> <span class="mi">1</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="p">[</span><span class="n">label</span> <span class="o">==</span> <span class="mi">254</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">label</span> <span class="o">!=</span> <span class="n">ignore_index</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">pred_label</span> <span class="o">=</span> <span class="n">pred_label</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">intersect</span> <span class="o">=</span> <span class="n">pred_label</span><span class="p">[</span><span class="n">pred_label</span> <span class="o">==</span> <span class="n">label</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">area_intersect</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">histc</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">intersect</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="n">num_classes</span><span class="p">),</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="n">num_classes</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">area_pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">histc</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">pred_label</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="n">num_classes</span><span class="p">),</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="n">num_classes</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">area_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">histc</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="n">num_classes</span><span class="p">),</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="n">num_classes</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">area_union</span> <span class="o">=</span> <span class="n">area_pred_label</span> <span class="o">+</span> <span class="n">area_label</span> <span class="o">-</span> <span class="n">area_intersect</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">area_intersect</span><span class="p">,</span> <span class="n">area_union</span><span class="p">,</span> <span class="n">area_pred_label</span><span class="p">,</span> <span class="n">area_label</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">total_intersect_and_union</span><span class="p">(</span><span class="n">results</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                         <span class="n">gt_seg_maps</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                         <span class="n">num_classes</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                         <span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                         <span class="n">label_map</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>  
+</span></span><span class="line"><span class="cl">                         <span class="n">reduce_zero_label</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">num_imgs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">gt_seg_maps</span><span class="p">))</span> <span class="o">==</span> <span class="n">num_imgs</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_intersect</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classes</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_union</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classes</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classes</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classes</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">result</span><span class="p">,</span> <span class="n">gt_seg_map</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">gt_seg_maps</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">area_intersect</span><span class="p">,</span> <span class="n">area_union</span><span class="p">,</span> <span class="n">area_pred_label</span><span class="p">,</span> <span class="n">area_label</span> <span class="o">=</span> \  
+</span></span><span class="line"><span class="cl">            <span class="n">intersect_and_union</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">result</span><span class="p">,</span> <span class="n">gt_seg_map</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">label_map</span><span class="p">,</span> <span class="n">reduce_zero_label</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">total_area_intersect</span> <span class="o">+=</span> <span class="n">area_intersect</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">total_area_union</span> <span class="o">+=</span> <span class="n">area_union</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">total_area_pred_label</span> <span class="o">+=</span> <span class="n">area_pred_label</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">total_area_label</span> <span class="o">+=</span> <span class="n">area_label</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">total_area_intersect</span><span class="p">,</span> <span class="n">total_area_union</span><span class="p">,</span> <span class="n">total_area_pred_label</span><span class="p">,</span> \  
+</span></span><span class="line"><span class="cl">        <span class="n">total_area_label</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mean_iou</span><span class="p">(</span><span class="n">results</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">             <span class="n">gt_seg_maps</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">             <span class="n">num_classes</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">             <span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">             <span class="n">nan_to_num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">             <span class="n">label_map</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>  
+</span></span><span class="line"><span class="cl">             <span class="n">reduce_zero_label</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">    <span class="n">iou_result</span> <span class="o">=</span> <span class="n">eval_metrics</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">results</span><span class="o">=</span><span class="n">results</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">gt_seg_maps</span><span class="o">=</span><span class="n">gt_seg_maps</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mIoU&#39;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">nan_to_num</span><span class="o">=</span><span class="n">nan_to_num</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label_map</span><span class="o">=</span><span class="n">label_map</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">reduce_zero_label</span><span class="o">=</span><span class="n">reduce_zero_label</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">iou_result</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mean_fscore</span><span class="p">(</span><span class="n">results</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">gt_seg_maps</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">num_classes</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">nan_to_num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">label_map</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">reduce_zero_label</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">    <span class="n">fscore_result</span> <span class="o">=</span> <span class="n">eval_metrics</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">results</span><span class="o">=</span><span class="n">results</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">gt_seg_maps</span><span class="o">=</span><span class="n">gt_seg_maps</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mFscore&#39;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">nan_to_num</span><span class="o">=</span><span class="n">nan_to_num</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">label_map</span><span class="o">=</span><span class="n">label_map</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">reduce_zero_label</span><span class="o">=</span><span class="n">reduce_zero_label</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fscore_result</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">eval_metrics</span><span class="p">(</span><span class="n">results</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">gt_seg_maps</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">num_classes</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">ignore_index</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mIoU&#39;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">nan_to_num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">label_map</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">reduce_zero_label</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">              <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_intersect</span><span class="p">,</span> <span class="n">total_area_union</span><span class="p">,</span> <span class="n">total_area_pred_label</span><span class="p">,</span> \  
+</span></span><span class="line"><span class="cl">        <span class="n">total_area_label</span> <span class="o">=</span> <span class="n">total_intersect_and_union</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">results</span><span class="p">,</span> <span class="n">gt_seg_maps</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">ignore_index</span><span class="p">,</span> <span class="n">label_map</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">reduce_zero_label</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">ret_metrics</span> <span class="o">=</span> <span class="n">total_area_to_metrics</span><span class="p">(</span><span class="n">total_area_intersect</span><span class="p">,</span> <span class="n">total_area_union</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                                 <span class="n">total_area_pred_label</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                                 <span class="n">total_area_label</span><span class="p">,</span><span class="n">metrics</span><span class="p">,</span> <span class="n">nan_to_num</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret_metrics</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">pre_eval_to_metrics</span><span class="p">(</span><span class="n">pre_eval_results</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mIoU&#39;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">                        <span class="n">nan_to_num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                        <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="n">pre_eval_results</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">pre_eval_results</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pre_eval_results</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_intersect</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pre_eval_results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_union</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pre_eval_results</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_pred_label</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pre_eval_results</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">total_area_label</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pre_eval_results</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">ret_metrics</span> <span class="o">=</span> <span class="n">total_area_to_metrics</span><span class="p">(</span><span class="n">total_area_intersect</span><span class="p">,</span> <span class="n">total_area_union</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                                 <span class="n">total_area_pred_label</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                                 <span class="n">total_area_label</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">nan_to_num</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                                 <span class="n">beta</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret_metrics</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">total_area_to_metrics</span><span class="p">(</span><span class="n">total_area_intersect</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                     <span class="n">total_area_union</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                     <span class="n">total_area_pred_label</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                     <span class="n">total_area_label</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                     <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mIoU&#39;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">                     <span class="n">nan_to_num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                     <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metrics</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="n">metrics</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">allowed_metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mIoU&#39;</span><span class="p">,</span> <span class="s1">&#39;mFscore&#39;</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">allowed_metrics</span><span class="p">)):</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;metrics </span><span class="si">{}</span><span class="s1"> is not supported&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">all_acc</span> <span class="o">=</span> <span class="n">total_area_intersect</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">total_area_label</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">ret_metrics</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">({</span><span class="s1">&#39;aAcc&#39;</span><span class="p">:</span> <span class="n">all_acc</span><span class="p">})</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">metrics</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">metric</span> <span class="o">==</span> <span class="s1">&#39;mIoU&#39;</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">iou</span> <span class="o">=</span> <span class="n">total_area_intersect</span> <span class="o">/</span> <span class="n">total_area_union</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">acc</span> <span class="o">=</span> <span class="n">total_area_intersect</span> <span class="o">/</span> <span class="n">total_area_label</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">ret_metrics</span><span class="p">[</span><span class="s1">&#39;IoU&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iou</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">ret_metrics</span><span class="p">[</span><span class="s1">&#39;Acc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">acc</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">metric</span> <span class="o">==</span> <span class="s1">&#39;mFscore&#39;</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">precision</span> <span class="o">=</span> <span class="n">total_area_intersect</span> <span class="o">/</span> <span class="n">total_area_pred_label</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">recall</span> <span class="o">=</span> <span class="n">total_area_intersect</span> <span class="o">/</span> <span class="n">total_area_label</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">f_value</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">                <span class="p">[</span><span class="n">f_score</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">beta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">)])</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">ret_metrics</span><span class="p">[</span><span class="s1">&#39;Fscore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_value</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">ret_metrics</span><span class="p">[</span><span class="s1">&#39;Precision&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">precision</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">ret_metrics</span><span class="p">[</span><span class="s1">&#39;Recall&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">recall</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">ret_metrics</span> <span class="o">=</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">metric</span><span class="p">:</span> <span class="n">value</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">metric</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">ret_metrics</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">nan_to_num</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">ret_metrics</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">({</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">metric</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">metric_value</span><span class="p">,</span> <span class="n">nan</span><span class="o">=</span><span class="n">nan_to_num</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">metric</span><span class="p">,</span> <span class="n">metric_value</span> <span class="ow">in</span> <span class="n">ret_metrics</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret_metrics</span>  
+</span></span></code></pre></div>
+    </div>
+
+    
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/&amp;text=" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/&amp;t=" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=&amp;body=https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/&amp;title=" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%20https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://Zhang-maozhen.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huffcc11260e083ac4fb25532c280cba87_3908728_270x270_fill_q75_lanczos_center.jpg" alt="Zhang Maozhen"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://Zhang-maozhen.github.io/">Zhang Maozhen</a></h5>
+      <h6 class="card-subtitle">Student</h6>
+      <p class="card-text">My research interests include deepfake detection, federatedLearning and differential privacy.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.uk/citations?user=0rJt0NYAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/Zhang-maozhen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2022 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.46271ef31da3f018e9cd1b59300aa265.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.3239609ca7abe02ed52d76ffcb22af1d.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+</body>
+</html>
