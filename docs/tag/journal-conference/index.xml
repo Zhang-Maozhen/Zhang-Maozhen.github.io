@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects | Academic</title>
-    <link>https://Zhang-maozhen.github.io/project/</link>
-      <atom:link href="https://Zhang-maozhen.github.io/project/index.xml" rel="self" type="application/rss+xml" />
-    <description>Projects</description>
+    <title>Journal Conference | Academic</title>
+    <link>https://Zhang-maozhen.github.io/tag/journal-conference/</link>
+      <atom:link href="https://Zhang-maozhen.github.io/tag/journal-conference/index.xml" rel="self" type="application/rss+xml" />
+    <description>Journal Conference</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 19 Jul 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://Zhang-maozhen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>Projects</title>
-      <link>https://Zhang-maozhen.github.io/project/</link>
+      <title>Journal Conference</title>
+      <link>https://Zhang-maozhen.github.io/tag/journal-conference/</link>
     </image>
-    
-    <item>
-      <title>CCF推荐中文期刊会议</title>
-      <link>https://Zhang-maozhen.github.io/project/ccf-recommend-of-chine/</link>
-      <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/project/ccf-recommend-of-chine/</guid>
-      <description>&lt;h1 id=&#34;ccf学会&#34;&gt;CCF学会&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.ccf.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CCF学会地址&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>CCF推荐英文期刊会议</title>

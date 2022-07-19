@@ -33,1335 +33,23 @@
     </item>
     
     <item>
-      <title>LaTeX安装及语法</title>
-      <link>https://Zhang-maozhen.github.io/post/latex/latex/</link>
-      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/post/latex/latex/</guid>
-      <description>&lt;h1 id=&#34;latex&#34;&gt;Latex&lt;/h1&gt;
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-&lt;h3 id=&#34;windows&#34;&gt;windows&lt;/h3&gt;
-&lt;p&gt;安装latex运行环境Texlive&lt;/p&gt;
-&lt;p&gt;安装latex编辑器：TeXworks(适合上手)、TeXstudio(听说好用)&lt;/p&gt;
-&lt;p&gt;选择Latex阅读器和编辑器(Latex编译结果是PDF文件)：Acrobat&lt;/p&gt;
-&lt;h3 id=&#34;mac&#34;&gt;mac&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://tug.org/mactex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MacTeX&lt;/a&gt;是TeXLive的Mac版&lt;/p&gt;
-&lt;p&gt;安装Sublime Text 3，打开Tools，选择Install Package Control。再从Preference选择Package Control，输入Install Package，输入LatexTools，回车安装LatexTools插件&lt;/p&gt;
-&lt;p&gt;最后安装Skim，安装好后运行Skim，进入&lt;code&gt;Skim——选项&lt;/code&gt;，点击&lt;code&gt;同步&lt;/code&gt;进行设置&lt;/p&gt;
-&lt;p&gt;下放部分存疑：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;默认情况下,  是安装在 /usr/local/texlive 路径下. pdflatex 等编译器通常会在类似 /usr/local/texlive/2021/bin/universal-darwin/pdflatex 路径下&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;编写&#34;&gt;编写&lt;/h2&gt;
-&lt;p&gt;TeX有多种文档类型可选，笔者较常用的有如下几种类型：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;对于英文，可以用&lt;code&gt;book&lt;/code&gt;、&lt;code&gt;article&lt;/code&gt;和&lt;code&gt;beamer&lt;/code&gt;；&lt;/li&gt;
-&lt;li&gt;对于中文，可以用&lt;code&gt;ctexbook&lt;/code&gt;、&lt;code&gt;ctexart&lt;/code&gt;和&lt;code&gt;ctexbeamer&lt;/code&gt;，这些类型自带了对中文的支持。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;不同的文件类型，编写的过程中也会有一定的差异，如果直接修改文件类型的话，甚至会报错。以下统一选用&lt;code&gt;ctexart&lt;/code&gt;。在编辑框第一行，输入如下内容来设置文件类型：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;文件的正文部分需要放入document环境中，在document环境外的部分不会出现在文件中。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;作者：Dylaaan
-链接：https://zhuanlan.zhihu.com/p/456055339
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;
-&lt;h3 id=&#34;宏包&#34;&gt;宏包&lt;/h3&gt;
-&lt;p&gt;为了完成一些功能（如定理环境），还需要在导言区，也即document环境之前加载&lt;a href=&#34;https://www.zhihu.com/search?q=%e5%ae%8f%e5%8c%85&amp;amp;search_source=Entity&amp;amp;hybrid_search_source=Entity&amp;amp;hybrid_search_extra=%7b%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22456055339%22%7d&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;宏包&lt;/a&gt;。加载宏包的代码是&lt;code&gt;\usepackage{}&lt;/code&gt;。本份教程中，与数学公式与定理环境相关的宏包为&lt;code&gt;amsmath&lt;/code&gt;、&lt;code&gt;amsthm&lt;/code&gt;、&lt;code&gt;amssymb&lt;/code&gt;，用于插入图片的宏包为&lt;code&gt;graphicx&lt;/code&gt;，代码如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，在加载宏包时还可以设置基本参数，如使用超链接宏包&lt;code&gt;hyperref&lt;/code&gt;，可以设置引用的颜色为黑色等，代码如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;标题&#34;&gt;标题&lt;/h3&gt;
-&lt;p&gt;标题可以用&lt;code&gt;\title{}&lt;/code&gt;设置，作者可以用&lt;code&gt;\author&lt;/code&gt;设置，日期可以用&lt;code&gt;\date{}&lt;/code&gt;设置，这些都需要放在导言区。为了在文档中显示标题信息，需要使用&lt;code&gt;\maketitle&lt;/code&gt;。例如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;% 导言区
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\title&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;我的第一个&lt;span class=&#34;k&#34;&gt;\LaTeX&lt;/span&gt; 文档&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\author&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Dylaaan&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\date&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\today&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\maketitle&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;正文&#34;&gt;正文&lt;/h3&gt;
-&lt;p&gt;正文可以直接在document环境中书写，没有必要加入空格来缩进，因为文档默认会进行首行缩进。相邻的两行在编译时仍然会视为同一段。在LaTeX中，另起一段的方式是使用一行相隔，例如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我是第一段. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我是第二段.
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样编译出来就是两个段落。在正文部分，多余的空格、回车等等都会被自动忽略，这保证了全文排版不会突然多出一行或者多出一个空格。另外，另起一页的方式是：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newpage&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;笔者在编写文档时，为了保证美观，通常将中文标点符号替换为英文标点符号（需要注意的是英文标点符号后面还有一个空格），这比较适合数学类型的文档。&lt;/p&gt;
-&lt;p&gt;在正文中，还可以设置局部的特殊字体：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;字体&lt;/th&gt;
-&lt;th&gt;命令&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;直立&lt;/td&gt;
-&lt;td&gt;\textup{}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;意大利&lt;/td&gt;
-&lt;td&gt;\textit{}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;倾斜&lt;/td&gt;
-&lt;td&gt;\textsl{}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;小型大写&lt;/td&gt;
-&lt;td&gt;\textsc{}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;加宽加粗&lt;/td&gt;
-&lt;td&gt;\textbf{}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;章节&#34;&gt;章节&lt;/h3&gt;
-&lt;p&gt;对于&lt;code&gt;ctexart&lt;/code&gt;文件类型，章节可以用&lt;code&gt;\section{}&lt;/code&gt;和&lt;code&gt;\subsection{}&lt;/code&gt;命令来标记，例如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;% 导言区
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\title&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;我的第一个&lt;span class=&#34;k&#34;&gt;\LaTeX&lt;/span&gt; 文档&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\author&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Dylaaan&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\date&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\today&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\maketitle&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\section&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;一级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;目录&#34;&gt;目录&lt;/h3&gt;
-&lt;p&gt;在有了章节的结构之后，使用&lt;code&gt;\tableofcontents&lt;/code&gt;命令就可以在指定位置生成目录。通常带有目录的文件需要编译两次，因为需要先在目录中生成.toc文件，再据此生成目录。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;% 导言区
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\title&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;我的第一个&lt;span class=&#34;k&#34;&gt;\LaTeX&lt;/span&gt; 文档&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\author&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Dylaaan&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\date&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\today&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\maketitle&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\tableofcontents&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\section&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;一级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;图片&#34;&gt;图片&lt;/h3&gt;
-&lt;p&gt;插入图片需要使用&lt;code&gt;graphicx&lt;/code&gt;宏包，建议使用如下方式：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;figure&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[htbp]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\centering&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\includegraphics&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[width=8cm]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;图片.jpg&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\caption&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;图片标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;figure&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中，&lt;code&gt;[htbp]&lt;/code&gt;的作用是自动选择插入图片的最优位置，&lt;code&gt;\centering&lt;/code&gt;设置让图片居中，&lt;code&gt;[width=8cm]&lt;/code&gt;设置了图片的宽度为8cm，&lt;code&gt;\caption{}&lt;/code&gt;用于设置图片的标题。&lt;/p&gt;
-&lt;h3 id=&#34;表格&#34;&gt;表格&lt;/h3&gt;
-&lt;p&gt;LaTeX中表格的插入较为麻烦，可以直接使用&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//www.tablesgenerator.com/%23&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Create LaTeX tables online – TablesGenerator.com&lt;/a&gt;来生成。建议使用如下方式：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;table&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[htbp]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\centering&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\caption&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;表格标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;tabular&lt;span class=&#34;nb&#34;&gt;}{&lt;/span&gt;ccc&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        1 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 2 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 3 &lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        4 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 5 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 6 &lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        7 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 8 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 9
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;tabular&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;table&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;列表&#34;&gt;列表&lt;/h3&gt;
-&lt;p&gt;LaTeX中的列表环境包含无序列表&lt;code&gt;itemize&lt;/code&gt;、有序列表&lt;code&gt;enumerate&lt;/code&gt;和描述&lt;code&gt;description&lt;/code&gt;，以&lt;code&gt;enumerate&lt;/code&gt;为例，用法如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt; 这是第一点; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt; 这是第二点;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt; 这是第三点. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，也可以自定义&lt;code&gt;\item&lt;/code&gt;的样式：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[(1)]&lt;/span&gt; 这是第一点; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[(2)]&lt;/span&gt; 这是第二点;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[(3)]&lt;/span&gt; 这是第三点. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;定理环境&#34;&gt;定理环境&lt;/h3&gt;
-&lt;p&gt;定理环境需要使用&lt;code&gt;amsthm&lt;/code&gt;宏包，首先在导言区加入：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;\newtheorem{theorem}{定理}[section]
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中&lt;code&gt;{theorem}&lt;/code&gt;是环境的名称，&lt;code&gt;{定理}&lt;/code&gt;设置了该环境显示的名称是“定理”，&lt;code&gt;[section]&lt;/code&gt;的作用是让&lt;code&gt;theorem&lt;/code&gt;环境在每个section中单独编号。在正文中，用如下方式来加入一条定理：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;theorem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[定理名称]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    这里是定理的内容. 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;theorem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中&lt;code&gt;[定理名称]&lt;/code&gt;不是必须的。另外，我们还可以建立新的环境，如果要让新的环境和&lt;code&gt;theorem&lt;/code&gt;环境一起计数的话，可以用如下方式：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;theorem&lt;span class=&#34;nb&#34;&gt;}{&lt;/span&gt;定理&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[section]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;definition&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;定义&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;lemma&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;引理&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;corollary&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;推论&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;example&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;例&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;proposition&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;命题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，定理的证明可以直接用&lt;code&gt;proof&lt;/code&gt;环境。&lt;/p&gt;
-&lt;h3 id=&#34;页面&#34;&gt;页面&lt;/h3&gt;
-&lt;p&gt;最开始选择文件类型时，我们设置的页面大小是a4paper，除此之外，我们也可以修改页面大小为b5paper等等。&lt;/p&gt;
-&lt;p&gt;一般情况下，LaTeX默认的页边距很大，为了让每一页显示的内容更多一些，我们可以使用&lt;code&gt;geometry&lt;/code&gt;宏包，并在导言区加入以下代码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;geometry&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\geometry&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，为了设置行间距，可以使用如下代码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\linespread&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;1.5&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;页码&#34;&gt;页码&lt;/h3&gt;
-&lt;p&gt;默认的页码编码方式是&lt;a href=&#34;https://www.zhihu.com/search?q=%e9%98%bf%e6%8b%89%e4%bc%af%e6%95%b0%e5%ad%97&amp;amp;search_source=Entity&amp;amp;hybrid_search_source=Entity&amp;amp;hybrid_search_extra=%7b%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22456055339%22%7d&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿拉伯数字&lt;/a&gt;，用户也可以自己设置为小写罗马数字：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;roman&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，&lt;code&gt;aiph&lt;/code&gt;表示小写字母，&lt;code&gt;Aiph&lt;/code&gt;表示大写字母，&lt;code&gt;Roman&lt;/code&gt;表示大写罗马数字，&lt;code&gt;arabic&lt;/code&gt;表示默认的阿拉伯数字。如果要设置页码的话，可以用如下代码来设置页码从0开始：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\setcounter{page}{0}
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;latex数学公式&#34;&gt;Latex数学公式&lt;/h1&gt;
-&lt;h2 id=&#34;字体&#34;&gt;字体&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;数学表达式&lt;/th&gt;
-&lt;th&gt;Latex公式&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;花体A&lt;/td&gt;
-&lt;td&gt;$\mathbb{A}$&lt;/td&gt;
-&lt;td&gt;\mathbb{A}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;手写体N&lt;/td&gt;
-&lt;td&gt;$\mathcal{N}$&lt;/td&gt;
-&lt;td&gt;\mathcal{N}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;希腊&#34;&gt;希腊&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;序号&lt;/th&gt;
-&lt;th&gt;大写&lt;/th&gt;
-&lt;th&gt;小写&lt;/th&gt;
-&lt;th&gt;英文注音&lt;/th&gt;
-&lt;th&gt;国际音标注音&lt;/th&gt;
-&lt;th&gt;中文注音&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;Α&lt;/td&gt;
-&lt;td&gt;α&lt;/td&gt;
-&lt;td&gt;alpha&lt;/td&gt;
-&lt;td&gt;a:lf&lt;/td&gt;
-&lt;td&gt;阿尔法&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Β&lt;/td&gt;
-&lt;td&gt;β&lt;/td&gt;
-&lt;td&gt;beta&lt;/td&gt;
-&lt;td&gt;bet&lt;/td&gt;
-&lt;td&gt;贝塔&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;Γ&lt;/td&gt;
-&lt;td&gt;γ&lt;/td&gt;
-&lt;td&gt;gamma&lt;/td&gt;
-&lt;td&gt;ga:m&lt;/td&gt;
-&lt;td&gt;伽马&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;Δ&lt;/td&gt;
-&lt;td&gt;δ&lt;/td&gt;
-&lt;td&gt;delta&lt;/td&gt;
-&lt;td&gt;delt&lt;/td&gt;
-&lt;td&gt;德尔塔&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;Ε&lt;/td&gt;
-&lt;td&gt;ε&lt;/td&gt;
-&lt;td&gt;epsilon&lt;/td&gt;
-&lt;td&gt;ep`silon&lt;/td&gt;
-&lt;td&gt;伊普西龙&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;td&gt;Ζ&lt;/td&gt;
-&lt;td&gt;ζ&lt;/td&gt;
-&lt;td&gt;zeta&lt;/td&gt;
-&lt;td&gt;zat&lt;/td&gt;
-&lt;td&gt;截塔&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;Η&lt;/td&gt;
-&lt;td&gt;η&lt;/td&gt;
-&lt;td&gt;eta&lt;/td&gt;
-&lt;td&gt;eit&lt;/td&gt;
-&lt;td&gt;艾塔&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;Θ&lt;/td&gt;
-&lt;td&gt;θ&lt;/td&gt;
-&lt;td&gt;theta&lt;/td&gt;
-&lt;td&gt;θit&lt;/td&gt;
-&lt;td&gt;西塔&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;Ι&lt;/td&gt;
-&lt;td&gt;ι&lt;/td&gt;
-&lt;td&gt;iot&lt;/td&gt;
-&lt;td&gt;aiot&lt;/td&gt;
-&lt;td&gt;约塔&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;Κ&lt;/td&gt;
-&lt;td&gt;κ&lt;/td&gt;
-&lt;td&gt;kappa&lt;/td&gt;
-&lt;td&gt;kap&lt;/td&gt;
-&lt;td&gt;卡帕&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;11&lt;/td&gt;
-&lt;td&gt;Λ&lt;/td&gt;
-&lt;td&gt;λ&lt;/td&gt;
-&lt;td&gt;lambda&lt;/td&gt;
-&lt;td&gt;lambd&lt;/td&gt;
-&lt;td&gt;兰布达&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;12&lt;/td&gt;
-&lt;td&gt;Μ&lt;/td&gt;
-&lt;td&gt;μ&lt;/td&gt;
-&lt;td&gt;mu&lt;/td&gt;
-&lt;td&gt;mju&lt;/td&gt;
-&lt;td&gt;缪&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;13&lt;/td&gt;
-&lt;td&gt;Ν&lt;/td&gt;
-&lt;td&gt;ν&lt;/td&gt;
-&lt;td&gt;nu&lt;/td&gt;
-&lt;td&gt;nju&lt;/td&gt;
-&lt;td&gt;纽&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;14&lt;/td&gt;
-&lt;td&gt;Ξ&lt;/td&gt;
-&lt;td&gt;ξ&lt;/td&gt;
-&lt;td&gt;xi&lt;/td&gt;
-&lt;td&gt;ksi&lt;/td&gt;
-&lt;td&gt;克西&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;15&lt;/td&gt;
-&lt;td&gt;Ο&lt;/td&gt;
-&lt;td&gt;ο&lt;/td&gt;
-&lt;td&gt;omicron&lt;/td&gt;
-&lt;td&gt;omik`ron&lt;/td&gt;
-&lt;td&gt;奥密克戎&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;16&lt;/td&gt;
-&lt;td&gt;Π&lt;/td&gt;
-&lt;td&gt;π&lt;/td&gt;
-&lt;td&gt;pi&lt;/td&gt;
-&lt;td&gt;pai&lt;/td&gt;
-&lt;td&gt;派&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;17&lt;/td&gt;
-&lt;td&gt;Ρ&lt;/td&gt;
-&lt;td&gt;ρ&lt;/td&gt;
-&lt;td&gt;rho&lt;/td&gt;
-&lt;td&gt;rou&lt;/td&gt;
-&lt;td&gt;肉&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;18&lt;/td&gt;
-&lt;td&gt;Σ&lt;/td&gt;
-&lt;td&gt;σ&lt;/td&gt;
-&lt;td&gt;sigma&lt;/td&gt;
-&lt;td&gt;`sigma&lt;/td&gt;
-&lt;td&gt;西格马&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;19&lt;/td&gt;
-&lt;td&gt;Τ&lt;/td&gt;
-&lt;td&gt;τ&lt;/td&gt;
-&lt;td&gt;tau&lt;/td&gt;
-&lt;td&gt;tau&lt;/td&gt;
-&lt;td&gt;套&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;20&lt;/td&gt;
-&lt;td&gt;Υ&lt;/td&gt;
-&lt;td&gt;υ&lt;/td&gt;
-&lt;td&gt;upsilon&lt;/td&gt;
-&lt;td&gt;jup`silon&lt;/td&gt;
-&lt;td&gt;宇普西龙&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;21&lt;/td&gt;
-&lt;td&gt;Φ&lt;/td&gt;
-&lt;td&gt;φ&lt;/td&gt;
-&lt;td&gt;phi&lt;/td&gt;
-&lt;td&gt;fai&lt;/td&gt;
-&lt;td&gt;佛爱&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;22&lt;/td&gt;
-&lt;td&gt;Χ&lt;/td&gt;
-&lt;td&gt;χ&lt;/td&gt;
-&lt;td&gt;chi&lt;/td&gt;
-&lt;td&gt;phai&lt;/td&gt;
-&lt;td&gt;西&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;23&lt;/td&gt;
-&lt;td&gt;Ψ&lt;/td&gt;
-&lt;td&gt;ψ&lt;/td&gt;
-&lt;td&gt;psi&lt;/td&gt;
-&lt;td&gt;psai&lt;/td&gt;
-&lt;td&gt;普西&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;24&lt;/td&gt;
-&lt;td&gt;Ω&lt;/td&gt;
-&lt;td&gt;ω&lt;/td&gt;
-&lt;td&gt;omega&lt;/td&gt;
-&lt;td&gt;o`miga&lt;/td&gt;
-&lt;td&gt;欧米伽&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;符号&#34;&gt;符号&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;数学表达式&lt;/th&gt;
-&lt;th&gt;Latex公式&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;黑点&lt;/td&gt;
-&lt;td&gt;$\bullet$&lt;/td&gt;
-&lt;td&gt;\bullet&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;上撇&lt;/td&gt;
-&lt;td&gt;$\prime$&lt;/td&gt;
-&lt;td&gt;\prime&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;上撇&lt;/td&gt;
-&lt;td&gt;$f^{\prime}$&lt;/td&gt;
-&lt;td&gt;f^{\prime}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;无穷&lt;/td&gt;
-&lt;td&gt;$\infty$&lt;/td&gt;
-&lt;td&gt;\infty&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;偏导&lt;/td&gt;
-&lt;td&gt;$\partial$&lt;/td&gt;
-&lt;td&gt;\partial&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;梯度&lt;/td&gt;
-&lt;td&gt;$\nabla$&lt;/td&gt;
-&lt;td&gt;\nabla&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;关系式&#34;&gt;关系式&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;数学表达式&lt;/th&gt;
-&lt;th&gt;Latex公式&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;大于等于&lt;/td&gt;
-&lt;td&gt;$\geq$&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$\geq$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;小于等于&lt;/td&gt;
-&lt;td&gt;$\leq$&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$\leq$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;不等于&lt;/td&gt;
-&lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cnot%3D&#34; alt=&#34;\not=&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$not=$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;不小于&lt;/td&gt;
-&lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cnot%3C&#34; alt=&#34;\not&amp;amp;lt;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$\not&amp;lt;$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;约等于&lt;/td&gt;
-&lt;td&gt;$\approx$&lt;/td&gt;
-&lt;td&gt;\approx&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;定义&lt;/td&gt;
-&lt;td&gt;$\triangleq{}$&lt;/td&gt;
-&lt;td&gt;\triangleq{}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;属于&#34;&gt;属于&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;数学表达式&lt;/th&gt;
-&lt;th&gt;Latex公式&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;包含于&lt;/td&gt;
-&lt;td&gt;$\subset$&lt;/td&gt;
-&lt;td&gt;\subset&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;真包含&lt;/td&gt;
-&lt;td&gt;$\subset$&lt;/td&gt;
-&lt;td&gt;\subset&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;包含&lt;/td&gt;
-&lt;td&gt;$\supset$&lt;/td&gt;
-&lt;td&gt;\supset&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;不包含&lt;/td&gt;
-&lt;td&gt;$\not\supset$&lt;/td&gt;
-&lt;td&gt;\not\supset&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;属于&lt;/td&gt;
-&lt;td&gt;$\in$&lt;/td&gt;
-&lt;td&gt;\in&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;相交&lt;/td&gt;
-&lt;td&gt;$\cap$&lt;/td&gt;
-&lt;td&gt;\cap&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;相并&lt;/td&gt;
-&lt;td&gt;$\cup$&lt;/td&gt;
-&lt;td&gt;\cup&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;空集&lt;/td&gt;
-&lt;td&gt;$\emptyset$&lt;/td&gt;
-&lt;td&gt;\emptyset&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;乘除法&#34;&gt;乘除法&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;数学表达式&lt;/th&gt;
-&lt;th&gt;Latex公式&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;加减&lt;/td&gt;
-&lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cpm&#34; alt=&#34;\pm&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$\pm$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;点乘&lt;/td&gt;
-&lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Ccdot&#34; alt=&#34;\cdot&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$cdot$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;乘&lt;/td&gt;
-&lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Ctimes&#34; alt=&#34;\times&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$\times&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;除&lt;/td&gt;
-&lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cdiv&#34; alt=&#34;\div&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$\div$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;乘法点&lt;/td&gt;
-&lt;td&gt;$\cdot$&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;$\cdot$&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;上标帽子&#34;&gt;上标帽子&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;数学表达式&lt;/th&gt;
-&lt;th&gt;Latex公式&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\overline{a}$&lt;/td&gt;
-&lt;td&gt;\overline{a}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\hat{a}$&lt;/td&gt;
-&lt;td&gt;\hat{a}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\widehat{a}$&lt;/td&gt;
-&lt;td&gt;\widehat{a}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\overline{a}$&lt;/td&gt;
-&lt;td&gt;\overline{a}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\widetilde{a}$&lt;/td&gt;
-&lt;td&gt;\widetilde{a}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\dot{a}$&lt;/td&gt;
-&lt;td&gt;\dot{a}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\ddot{a}$&lt;/td&gt;
-&lt;td&gt;\ddot{a}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;符号上下标&#34;&gt;符号上下标&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;数学表达式&lt;/th&gt;
-&lt;th&gt;Latex公式&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;$\hat \beta = \underset{\beta}{\arg \min} L(\beta)$&lt;/td&gt;
-&lt;td&gt;\underset{?}{?}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;数学符号&lt;/td&gt;
-&lt;td&gt;$\sum\limits_{i=1}$&lt;/td&gt;
-&lt;td&gt;\limits&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;普通符号&lt;/td&gt;
-&lt;td&gt;$\mathop{\lambda}\limits_{i=1}$先\mathop转换，再\limits&lt;/td&gt;
-&lt;td&gt;\mathop{\lambda}\limits_{i=1}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;等号上标&lt;/td&gt;
-&lt;td&gt;$\overset{\text{def}}{=}$&lt;/td&gt;
-&lt;td&gt;\usepackage{amsmath}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;等号下标&lt;/td&gt;
-&lt;td&gt;$\underset{\text{heated}}{=}$&lt;/td&gt;
-&lt;td&gt;\usepackage{amsmath}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;箭头&#34;&gt;箭头&lt;/h2&gt;
-&lt;p&gt;箭头
-数学算式	Markdown公式	核心语法
-↑ \uparrow↑	\uparrow	
-↓ \downarrow↓	\downarrow	
-↕ \updownarrow↕	\updownarrow	
-⇑ \Uparrow⇑	\Uparrow	
-⇓ \Downarrow⇓	\Downarrow	
-⇕ \Updownarrow⇕	\Updownarrow	
-→ \rightarrow→	\rightarrow	
-← \leftarrow←	\leftarrow	
-↔ \leftrightarrow↔	\leftrightarrow	
-⇒ \Rightarrow⇒	\Rightarrow	
-⇐ \Leftarrow⇐	\Leftarrow	
-⇔ \Leftrightarrow⇔	\Leftrightarrow	
-⟶ \longrightarrow⟶	\longrightarrow	
-⟵ \longleftarrow⟵	\longleftarrow	
-⟷ \longleftrightarrow⟷	\longleftrightarrow	
-⟹ \Longrightarrow⟹	\Longrightarrow	
-⟸ \Longleftarrow⟸	\Longleftarrow	
-⟺ \Longleftrightarrow⟺	\Longleftrightarrow&lt;/p&gt;
-&lt;h2 id=&#34;排列方程组&#34;&gt;排列方程组&lt;/h2&gt;
-&lt;p&gt;使方程组对其，使用array环境，从begin到end中间的部分表示都是array阵列中的内容&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;l代表左对齐，r代表右对齐，c代表居中&lt;/li&gt;
-&lt;li&gt;&amp;amp;表示间隔符，每行的$会自动对齐&lt;/li&gt;
-&lt;li&gt;其中，{array}{l}表示一列的排列方式，而使用了&amp;amp;后，左右各两列，此处应该使用{array}{ll}&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;array&lt;span class=&#34;nb&#34;&gt;}{&lt;/span&gt;l代表左对齐，r代表右对齐，c代表居中&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\nabla\cdot&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;E&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt;=0&lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\nabla\cdot&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;B&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt;=0&lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\nabla\times&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;E&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt;=0&lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;array&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;$$
-\begin{array}{l代表左对齐，r代表右对齐，c代表居中}
-\nabla\cdot \mathbf{E} &amp;amp;=0\
-\nabla\cdot \mathbf{B} &amp;amp;=0\
-\nabla\times \mathbf{E} &amp;amp;=0\
-\end{array}
-$$
-还可以使用align环境，有备注功能，&amp;amp;&amp;amp;&lt;/p&gt;
-&lt;p&gt;如果希望使用大括号可以添加&lt;code&gt;\left\{ \right&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;左括号&lt;/td&gt;
-&lt;td&gt;$\left{ \right.$&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;\left\{ \right.&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;矩阵&#34;&gt;矩阵：&lt;/h2&gt;
-&lt;p&gt;$$
-\mu=\left[
-\begin{matrix}
-\mu_1\
-\mu_2\
-&amp;hellip;\
-\mu_n
-\end{matrix} \right]
-=\frac{1}{m}\sum_{i=1}^mx^{(i)}
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\mu=\left[
-\begin{matrix}
-1 &amp;amp; 2 &amp;amp; 3\
-4 &amp;amp; 5 &amp;amp; 6\
-&amp;hellip;\
-4 &amp;amp; 5 &amp;amp; 6
-\end{matrix} \right]
-=\frac{1}{m}\sum_{i=1}^mx^{(i)}\tag{1}
-$$&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;无&lt;/td&gt;
-&lt;td&gt;$\begin{matrix}a&amp;amp;b\c&amp;amp;d\end{matrix}$&lt;/td&gt;
-&lt;td&gt;matrix&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;圆括号&lt;/td&gt;
-&lt;td&gt;$\begin{pmatrix}a&amp;amp;b\c&amp;amp;d\end{pmatrix}$&lt;/td&gt;
-&lt;td&gt;pmatrix&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;方括号&lt;/td&gt;
-&lt;td&gt;$\begin{bmatrix}a&amp;amp;b\c&amp;amp;d\end{bmatrix}$&lt;/td&gt;
-&lt;td&gt;bmaritx&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;行列式&lt;/td&gt;
-&lt;td&gt;$\begin{vmatrix}a&amp;amp;b\c&amp;amp;d\end{vmatrix}$&lt;/td&gt;
-&lt;td&gt;vmatrix&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;大括号&lt;/td&gt;
-&lt;td&gt;$\begin{Bmatrix}a&amp;amp;b\c&amp;amp;d\end{Bmatrix}$&lt;/td&gt;
-&lt;td&gt;Bmatrix&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;范数&lt;/td&gt;
-&lt;td&gt;$\begin{Vmatrix}a&amp;amp;b\c&amp;amp;d\end{Vmatrix}$&lt;/td&gt;
-&lt;td&gt;Vmatrix&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;横三点&lt;/td&gt;
-&lt;td&gt;$\cdots$&lt;/td&gt;
-&lt;td&gt;\cdots&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;竖三点&lt;/td&gt;
-&lt;td&gt;$\vdots$&lt;/td&gt;
-&lt;td&gt;\vdots&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;斜三点&lt;/td&gt;
-&lt;td&gt;$\ddots$&lt;/td&gt;
-&lt;td&gt;\ddots&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;语法&#34;&gt;语法&lt;/h2&gt;
-&lt;h3 id=&#34;公式左对齐&#34;&gt;公式左对齐&lt;/h3&gt;
-&lt;p&gt;$$
-y=\left{
-\begin{matrix}
-1 &amp;amp;&amp;amp; if \quad p(x)\leq\epsilon \quad(非正常) \hfill\
-0 &amp;amp;&amp;amp; if \quad p(x)\geq\epsilon \quad(正常)\hfill
-\end{matrix}
-\right.
-$$&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;to apply an operation along a dimension,We can use the Tensor.view() function to reshape tensors similarly to numpy.reshape()
-
-It can also automatically calculate the correct dimension if a -1 is passed in. This is useful if we are working with batches, but the batch size is unknown.
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>命令与环境配置</title>
-      <link>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/linux%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;h1 id=&#34;conda&#34;&gt;Conda&lt;/h1&gt;
-&lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
-&lt;h3 id=&#34;对于conda的一些理解&#34;&gt;对于conda的一些理解&lt;/h3&gt;
-&lt;p&gt;作为一个虚拟环境配置管理软件，可以在电脑自身环境外创造虚拟环境(base是自身创造的虚拟环境)&lt;/p&gt;
-&lt;p&gt;在每个虚拟环境中就会相当于一个电脑（如虚拟机）&lt;/p&gt;
-&lt;p&gt;Pycharm等IDE开发工具可以选择conda中的某一个虚拟环境使用，进行的操作（更新、安装、删除）都会直接对虚拟环境进行操作&lt;/p&gt;
-&lt;p&gt;可再Pycharm中的setting中查看虚拟环境的包，同&lt;code&gt;conda list&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;shell-conda配置&#34;&gt;shell Conda配置&lt;/h3&gt;
-&lt;h4 id=&#34;环境&#34;&gt;环境&lt;/h4&gt;
-&lt;p&gt;查看当前系统环境&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda info -e
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda env list
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建新的环境&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 指定python版本为2.7，注意至少需要指定python版本或者要安装的包&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 自动安装python2.7最新版本&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda create -n env_name &lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2.7
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 同时安装必要的包&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda create -n env_name numpy matplotlib &lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2.7
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除环境&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda remove -n envs_name --all
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;克隆环境&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda create -n new_env1 new_env
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;环境切换&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 切换到新环境&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# linux/Mac下需要使用source activate env_name&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda activate env_name
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#退出环境，也可以使用`activate root`切回root环境&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda deactivate env_name
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看当前环境的所有包&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda list
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;镜像&#34;&gt;镜像&lt;/h4&gt;
-&lt;p&gt;镜像源&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --show
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看配置项&lt;code&gt;channels&lt;/code&gt;，如果显示带有&lt;code&gt;tsinghua&lt;/code&gt;,则说明已经安装过清华镜像&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;channels:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;conda config --removecjannels url 地址&lt;/code&gt;删除清华镜像，如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --removecjannels url https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;添加中科大镜像&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;设置搜索时显示通道地址&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --set show_channel_urls yes
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;配置虚拟环境的jupyter&#34;&gt;配置虚拟环境的jupyter&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install ipykernel
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#设置jupyter的名称，jupyterName是显示在jupyter的名称&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python -m ipykernel install --name jupyterName
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#执行打开jupyter notebook&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;jupyter notebook
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#如果发现jupyter notebook not found，则需要进行安装&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install jupyter notebook
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;升级命令&#34;&gt;升级命令&lt;/h3&gt;
-&lt;h4 id=&#34;pip升级&#34;&gt;pip升级&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python -m pip install --upgrade pip
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;包升级&#34;&gt;包升级&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install --upgrade 包名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#如&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install --upgrade matplotlib
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
-&lt;h5 id=&#34;代码运行不报错直接结束排查发现在导入库名处终止&#34;&gt;代码运行不报错，直接结束，排查发现在导入库名处终止&lt;/h5&gt;
-&lt;p&gt;异常原因：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;导入的包或许需要升级，兼容性存在问题&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;解决方法，升级/降级库版本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install --upgrade matplotlib
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;报错源路径下找不到current_repodatajson&#34;&gt;报错源路径下找不到&lt;code&gt;current_repodata.json&lt;/code&gt;&lt;/h5&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 报错信息：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PS C:&lt;span class=&#34;se&#34;&gt;\U&lt;/span&gt;sers&lt;span class=&#34;se&#34;&gt;\M&lt;/span&gt;z&amp;gt; conda create -n env_python2 &lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2.7
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Collecting package metadata &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;current_repodata.json&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;: failed
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CondaHTTPError: HTTP &lt;span class=&#34;m&#34;&gt;000&lt;/span&gt; CONNECTION FAILED &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; url &amp;lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64/current_repodata.json&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Elapsed: -
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;An HTTP error occurred when trying to retrieve this URL.
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;HTTP errors are often intermittent, and a simple retry will get you on your way.
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更改方法：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在进行常规操作的时候，比如创建一个虚拟环境，会报找不到&lt;code&gt;current_repodata.json&lt;/code&gt;这个文件，这个时候，把路径&lt;code&gt;Anaconda3/Library/bin&lt;/code&gt;目录下的&lt;code&gt;libcrypto-1_1-x64.dll&lt;/code&gt;和&lt;code&gt;libssl-1_1-x64.dll&lt;/code&gt;拷贝到&lt;code&gt;Anaconda3/DLLs&lt;/code&gt;目录下即可。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;git&#34;&gt;Git&lt;/h1&gt;
-&lt;h2 id=&#34;git与github连接&#34;&gt;Git与github连接&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;创建SSH Key&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本地Git仓库和GitHub仓库之间通过SSH加密传输的，GitHub需要识别是否是你的推送，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送，所以需要配置SSh Key&lt;/p&gt;
-&lt;p&gt;产生的密码在用户主目录下，id_rsa和id_rsa.pub两个目录&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;ssh-keygen -t rsa -C&amp;#34;1209173759@qq.com&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;登录github上，在&lt;code&gt;SSH and GPG keys&lt;/code&gt;页面Add SSH Key粘贴id_rsa.pub文件里的全部内容&lt;/li&gt;
-&lt;li&gt;检验是否添加成功，在git bash里面输入&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;ssh -T git@github.com
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;设置username和email，github每次commit都会记录该信息（分别是哪个用户进行的上传）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;git config --global user.name &amp;#34;name&amp;#34;//github登录名，上传信息的名字
-git config --global user.email &amp;#34;email&amp;#34;//你的github注册邮箱
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;把本地仓库传到github上/把远程仓库下载到本地&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//本地仓库传到github上
-git remote add origin git@github.com:Zhang-Maozen/仓库名.git
-git push -u origin master
-
-//远程仓库下载到本地
-git clone HTTPS //HTTPS是github上的连接地址 //会将连接下载到本地仓库，作为一个项目文件
-cd projectName
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;git操作&#34;&gt;Git操作&lt;/h2&gt;
-&lt;h3 id=&#34;git上传文件到远程仓库&#34;&gt;Git上传文件到远程仓库&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;//起名为origin
-git remote add origin https://gitee.com/Danerszz/my-note.git
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;查看状态&#34;&gt;查看状态&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote 
-git remote -v
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以查看到别名， 一般默认为origin&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote show origin 显示详细信息
-git remote rm origin 删除此别名的长裤设置
-git remote add 仓库别名 Url
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;删除连接&#34;&gt;删除连接&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote rm origin
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加连接&#34;&gt;添加连接&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//本地仓库传到github上
-git remote add origin git@github.com:Zhang-Maozen/仓库名.git
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;分支&#34;&gt;分支&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#查看分支&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#创建分支&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch newBranchName
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#切换分支&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout branchName
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#推送分支到远程&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin branchName
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#查看远程分支&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -a
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;获取远程库与本地同步合并&#34;&gt;获取远程库与本地同步合并&lt;/h3&gt;
-&lt;p&gt;如果远程库不为空必须做这一步，否则后面的提交会失败&lt;/p&gt;
-&lt;p&gt;//不加这句可能报错，原因是 github 中的 README.md 文件不在本地仓库中
-//可以通过该命令进行代码合并***&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull --rebase origin master
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;问题-1&#34;&gt;问题&lt;/h3&gt;
-&lt;h4 id=&#34;撤销commit同时保留git-add&#34;&gt;撤销commit，同时保留git add&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;reset&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;soft&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HEAD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;删除工作空间改动的代码撤销commit并且撤销git-add&#34;&gt;删除工作空间改动的代码，撤销commit，并且撤销git add&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset --hard HEAD^
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;修改git-commit注释内容&#34;&gt;修改git commit注释内容&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git commit --amend
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;还没git--commit-只撤销git-add此时会保留本地修改绿字变红字&#34;&gt;还没git  commit ,只撤销git add,此时会保留本地修改（绿字变红字）&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset HEAD filename
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;错误&#34;&gt;错误&lt;/h2&gt;
-&lt;h4 id=&#34;fatal-refusing-to-merge-unrelated-histories&#34;&gt;fatal: refusing to merge unrelated histories&lt;/h4&gt;
-&lt;p&gt;本地仓库在想做同步远程仓库到本地为之后本地仓库推送到远程仓库做准备时报错了，错误如下：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;解决：出现这个问题的最主要原因还是在于本地仓库和远程仓库实际上是独立的两个仓库。假如我之前是直接clone的方式在本地建立起远程github仓库的克隆本地仓库就不会有这问题了。&lt;/p&gt;
-&lt;p&gt;查阅了一下资料，发现可以在pull命令后紧接着使用&lt;code&gt;--allow-unrelated-history&lt;/code&gt;选项来解决问题（该选项可以合并两个独立启动仓库的历史）。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$git pull origin master --allow-unrelated-histories
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;openssl-ssl_connect-connection-was-reset-in-connection-to-githubcom443&#34;&gt;OpenSSL SSL_connect: Connection was reset in connection to github.com:443&lt;/h4&gt;
-&lt;p&gt;查看全局配置：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global -l
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;已有设置情况修改代理项：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global --unset http.proxy 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果使用过VPN或者代理，关机时未关，通过cmd下命令行ipconfig/flushdns清理dns缓存&lt;/p&gt;
-&lt;h2 id=&#34;个人主页与git操作&#34;&gt;个人主页与GIt操作&lt;/h2&gt;
-&lt;h3 id=&#34;发布到master&#34;&gt;发布到master&lt;/h3&gt;
-&lt;p&gt;仓库中创建&lt;code&gt;\docs&lt;/code&gt;，将生成的静态网页放入，在仓库&lt;code&gt;setting&lt;/code&gt;页面选择&lt;code&gt;pages&lt;/code&gt;，选择生成原路径&lt;code&gt;docs&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;发布到gh-pages-branch&#34;&gt;发布到gh-pages branch&lt;/h3&gt;
-&lt;p&gt;如果希望单独控制源文档和生成的网页文档的版本历史，可以使用单独建立一个&lt;code&gt;gh-pages branch&lt;/code&gt;的方法托管到&lt;code&gt;Github Pages&lt;/code&gt;——先将&lt;code&gt;/public&lt;/code&gt;子目录添加到&lt;code&gt;.gitignore&lt;/code&gt;中，让&lt;code&gt;master branch&lt;/code&gt;忽略其更新，然后在本地和Github端添加一个名为&lt;code&gt;gh-pages&lt;/code&gt;的branch：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//忽略public子目录
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;public&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; .gitignore
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//初始化gh-pages branch
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout --orphan gh-pages
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git reset --hard
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit --allow-empty -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;Initializing gh-pages branch&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin gh-pages
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout master
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;linux&#34;&gt;Linux&lt;/h1&gt;
-&lt;h3 id=&#34;linux的档案调用权限&#34;&gt;Linux的档案调用权限&lt;/h3&gt;
-&lt;p&gt;三级：档案拥有者、群组、其他&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;u°表示该档案的拥有者&lt;/li&gt;
-&lt;li&gt;g°表示与该党案的拥有者属于同一个群体（group）者&lt;/li&gt;
-&lt;li&gt;o°表示其他以外的人&lt;/li&gt;
-&lt;li&gt;a°表示三者都是&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;tar-压缩解压&#34;&gt;&lt;code&gt;tar&lt;/code&gt; 压缩解压&lt;/h3&gt;
-&lt;p&gt;压缩文件 非打包,将test.tar.gz压缩为a.c&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;tar -czvf test.tar.gz a.c&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;列出压缩文件内容&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;tar -tzvf test.tar.gz&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;将解压名.tar.gz解压到当前目录&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;tar -xzvf 解压名.tar.gz&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;cat-链接文件并打印到标准输出设备上&#34;&gt;&lt;code&gt;cat&lt;/code&gt; 链接文件并打印到标准输出设备上&lt;/h3&gt;
-&lt;p&gt;语法格式：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat [-AbeEnstTuv] [--help] [--version] filename&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;-n 或 &amp;ndash;number&lt;/strong&gt;：由 1 开始对所有输出的行数编号。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-b 或 &amp;ndash;number-nonblank&lt;/strong&gt;：和 -n 相似，只不过对于空白行不编号。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-s 或 &amp;ndash;squeeze-blank&lt;/strong&gt;：当遇到有连续两行以上的空白行，就代换为一行的空白行。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-v 或 &amp;ndash;show-nonprinting&lt;/strong&gt;：使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-E 或 &amp;ndash;show-ends&lt;/strong&gt; : 在每行结束处显示 $。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-T 或 &amp;ndash;show-tabs&lt;/strong&gt;: 将 TAB 字符显示为 ^I。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-A, &amp;ndash;show-all&lt;/strong&gt;：等价于 -vET。&lt;/li&gt;
-&lt;li&gt;**-e：**等价于&amp;quot;-vE&amp;quot;选项；&lt;/li&gt;
-&lt;li&gt;**-t：**等价于&amp;quot;-vT&amp;quot;选项；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;把textfile1的文档内容加上行号后输入textfile2文档中&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat -n textfile1 &amp;gt; textfile2&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;把textfile1和testfile2的文档内容加上行号（空白行不加）之后将内容附加到textfile3文档里&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat -b textfile1 textfile2 &amp;gt;&amp;gt; textfile3&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;清空/etc/text.txt文档内容&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat /dev/null /etc/test.txt&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;chmod--控制用户对文件的权限的命令&#34;&gt;&lt;code&gt;chmod &lt;/code&gt; 控制用户对文件的权限的命令&lt;/h3&gt;
-&lt;p&gt;chmoc [-cfvr] [&amp;ndash;help] [&amp;ndash;version] mode file &amp;hellip;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;-c : 若该文件权限确实已经更改，才显示其更改动作&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;-f : 若该文件权限无法被更改也不要显示错误讯息&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;-v : 显示权限变更的详细资料&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;-R : 对目前目录下的所有文件与子目录进行相同的权限变更(即以递归的方式逐个变更)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&amp;ndash;help : 显示辅助说明&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&amp;ndash;version : 显示版本&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;将文件file1.txt设为所有人皆可读：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;chmod ugo+r file1.txt&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;将文件file1.txt设为所有人皆可读取：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;chmod a+r file1.txt&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;将文件file1.txt与file2.txt设为该文件拥有者，与其所属一个群体着可写入，但其他以外的人则不可写入：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;chmod ug+w,o-w file1.txt file2.txt&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;将ex1.py设定为只有该文件拥有者可执行：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;chmod u+x ex1.py&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;将目前目录下的所有文件与子目录皆设为任何人可读取：&lt;/p&gt;
-&lt;p&gt;chmod -R a+r *&lt;/p&gt;
-&lt;h2 id=&#34;ubuntu&#34;&gt;ubuntu&lt;/h2&gt;
-&lt;h3 id=&#34;安装桌面&#34;&gt;安装桌面&lt;/h3&gt;
-&lt;p&gt;更新apt&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;两种方法，安装桌面环境&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;apt安装&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;tasksel的Debian工具&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#tasksel&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tasksel install ubuntu-desktop
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#apt&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install ubuntu-desktop
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装和配置显示管理器&lt;/p&gt;
-&lt;p&gt;默认GDM3，但过大，使用如下显示管理器&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install lightdm
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;用下面的命令启动显示管理器并加载 GUI：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;service&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;lightdm&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;start&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你可以使用下面的命令来检查当前的显示管理器：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;etc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;X11&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;manager&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行后得到的结果类似这样：如果你想关闭 GUI，那么打开一个终端并输入：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;service&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;lightdm&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;stop&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>An image encryption algorithm based on new chaos and diffusion values of a truth table</title>
-      <link>https://Zhang-maozhen.github.io/publication/an-image-encryption-algorithm-based-on-new-chaos-and-diffusion-values-of-a-truth-table/</link>
-      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/publication/an-image-encryption-algorithm-based-on-new-chaos-and-diffusion-values-of-a-truth-table/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+      <title>CCF推荐中文期刊会议</title>
+      <link>https://Zhang-maozhen.github.io/project/ccf-recommend-of-chine/</link>
+      <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://Zhang-maozhen.github.io/project/ccf-recommend-of-chine/</guid>
+      <description>&lt;h1 id=&#34;ccf学会&#34;&gt;CCF学会&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ccf.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CCF学会地址&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>CCF推荐英文期刊会议</title>
-      <link>https://Zhang-maozhen.github.io/project/ccf-recommend/ccf%E6%8E%A8%E8%8D%90%E6%9C%9F%E5%88%8A%E4%BC%9A%E8%AE%AE/</link>
-      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/project/ccf-recommend/ccf%E6%8E%A8%E8%8D%90%E6%9C%9F%E5%88%8A%E4%BC%9A%E8%AE%AE/</guid>
-      <description>&lt;h1 id=&#34;会议&#34;&gt;会议&lt;/h1&gt;
+      <link>https://Zhang-maozhen.github.io/project/ccf-recommend-of-english/</link>
+      <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://Zhang-maozhen.github.io/project/ccf-recommend-of-english/</guid>
+      <description>&lt;h1 id=&#34;ccf学会&#34;&gt;CCF学会&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ccf.org.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CCF学会地址&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;会议&#34;&gt;会议&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -11006,6 +9694,1330 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
     </item>
     
     <item>
+      <title>LaTeX安装及语法</title>
+      <link>https://Zhang-maozhen.github.io/post/latex/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://Zhang-maozhen.github.io/post/latex/</guid>
+      <description>&lt;h1 id=&#34;latex&#34;&gt;Latex&lt;/h1&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;h3 id=&#34;windows&#34;&gt;windows&lt;/h3&gt;
+&lt;p&gt;安装latex运行环境Texlive&lt;/p&gt;
+&lt;p&gt;安装latex编辑器：TeXworks(适合上手)、TeXstudio(听说好用)&lt;/p&gt;
+&lt;p&gt;选择Latex阅读器和编辑器(Latex编译结果是PDF文件)：Acrobat&lt;/p&gt;
+&lt;h3 id=&#34;mac&#34;&gt;mac&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://tug.org/mactex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MacTeX&lt;/a&gt;是TeXLive的Mac版&lt;/p&gt;
+&lt;p&gt;安装Sublime Text 3，打开Tools，选择Install Package Control。再从Preference选择Package Control，输入Install Package，输入LatexTools，回车安装LatexTools插件&lt;/p&gt;
+&lt;p&gt;最后安装Skim，安装好后运行Skim，进入&lt;code&gt;Skim——选项&lt;/code&gt;，点击&lt;code&gt;同步&lt;/code&gt;进行设置&lt;/p&gt;
+&lt;p&gt;下放部分存疑：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;默认情况下,  是安装在 /usr/local/texlive 路径下. pdflatex 等编译器通常会在类似 /usr/local/texlive/2021/bin/universal-darwin/pdflatex 路径下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;编写&#34;&gt;编写&lt;/h2&gt;
+&lt;p&gt;TeX有多种文档类型可选，笔者较常用的有如下几种类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于英文，可以用&lt;code&gt;book&lt;/code&gt;、&lt;code&gt;article&lt;/code&gt;和&lt;code&gt;beamer&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;对于中文，可以用&lt;code&gt;ctexbook&lt;/code&gt;、&lt;code&gt;ctexart&lt;/code&gt;和&lt;code&gt;ctexbeamer&lt;/code&gt;，这些类型自带了对中文的支持。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不同的文件类型，编写的过程中也会有一定的差异，如果直接修改文件类型的话，甚至会报错。以下统一选用&lt;code&gt;ctexart&lt;/code&gt;。在编辑框第一行，输入如下内容来设置文件类型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;文件的正文部分需要放入document环境中，在document环境外的部分不会出现在文件中。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;作者：Dylaaan
+链接：https://zhuanlan.zhihu.com/p/456055339
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;
+&lt;h3 id=&#34;宏包&#34;&gt;宏包&lt;/h3&gt;
+&lt;p&gt;为了完成一些功能（如定理环境），还需要在导言区，也即document环境之前加载&lt;a href=&#34;https://www.zhihu.com/search?q=%e5%ae%8f%e5%8c%85&amp;amp;search_source=Entity&amp;amp;hybrid_search_source=Entity&amp;amp;hybrid_search_extra=%7b%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22456055339%22%7d&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;宏包&lt;/a&gt;。加载宏包的代码是&lt;code&gt;\usepackage{}&lt;/code&gt;。本份教程中，与数学公式与定理环境相关的宏包为&lt;code&gt;amsmath&lt;/code&gt;、&lt;code&gt;amsthm&lt;/code&gt;、&lt;code&gt;amssymb&lt;/code&gt;，用于插入图片的宏包为&lt;code&gt;graphicx&lt;/code&gt;，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，在加载宏包时还可以设置基本参数，如使用超链接宏包&lt;code&gt;hyperref&lt;/code&gt;，可以设置引用的颜色为黑色等，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;标题&#34;&gt;标题&lt;/h3&gt;
+&lt;p&gt;标题可以用&lt;code&gt;\title{}&lt;/code&gt;设置，作者可以用&lt;code&gt;\author&lt;/code&gt;设置，日期可以用&lt;code&gt;\date{}&lt;/code&gt;设置，这些都需要放在导言区。为了在文档中显示标题信息，需要使用&lt;code&gt;\maketitle&lt;/code&gt;。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;% 导言区
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\title&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;我的第一个&lt;span class=&#34;k&#34;&gt;\LaTeX&lt;/span&gt; 文档&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\author&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Dylaaan&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\date&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\today&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\maketitle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;正文&#34;&gt;正文&lt;/h3&gt;
+&lt;p&gt;正文可以直接在document环境中书写，没有必要加入空格来缩进，因为文档默认会进行首行缩进。相邻的两行在编译时仍然会视为同一段。在LaTeX中，另起一段的方式是使用一行相隔，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我是第一段. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我是第二段.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样编译出来就是两个段落。在正文部分，多余的空格、回车等等都会被自动忽略，这保证了全文排版不会突然多出一行或者多出一个空格。另外，另起一页的方式是：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newpage&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;笔者在编写文档时，为了保证美观，通常将中文标点符号替换为英文标点符号（需要注意的是英文标点符号后面还有一个空格），这比较适合数学类型的文档。&lt;/p&gt;
+&lt;p&gt;在正文中，还可以设置局部的特殊字体：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字体&lt;/th&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;直立&lt;/td&gt;
+&lt;td&gt;\textup{}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;意大利&lt;/td&gt;
+&lt;td&gt;\textit{}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;倾斜&lt;/td&gt;
+&lt;td&gt;\textsl{}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小型大写&lt;/td&gt;
+&lt;td&gt;\textsc{}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;加宽加粗&lt;/td&gt;
+&lt;td&gt;\textbf{}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;章节&#34;&gt;章节&lt;/h3&gt;
+&lt;p&gt;对于&lt;code&gt;ctexart&lt;/code&gt;文件类型，章节可以用&lt;code&gt;\section{}&lt;/code&gt;和&lt;code&gt;\subsection{}&lt;/code&gt;命令来标记，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;% 导言区
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\title&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;我的第一个&lt;span class=&#34;k&#34;&gt;\LaTeX&lt;/span&gt; 文档&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\author&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Dylaaan&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\date&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\today&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\maketitle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\section&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;一级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;目录&#34;&gt;目录&lt;/h3&gt;
+&lt;p&gt;在有了章节的结构之后，使用&lt;code&gt;\tableofcontents&lt;/code&gt;命令就可以在指定位置生成目录。通常带有目录的文件需要编译两次，因为需要先在目录中生成.toc文件，再据此生成目录。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[12pt, a4paper, oneside]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;amsmath, amsthm, amssymb, graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;hyperref&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;% 导言区
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\title&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;我的第一个&lt;span class=&#34;k&#34;&gt;\LaTeX&lt;/span&gt; 文档&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\author&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Dylaaan&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\date&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\today&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\maketitle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\tableofcontents&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\section&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;一级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\subsection&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;二级标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这里是正文. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;图片&#34;&gt;图片&lt;/h3&gt;
+&lt;p&gt;插入图片需要使用&lt;code&gt;graphicx&lt;/code&gt;宏包，建议使用如下方式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;figure&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[htbp]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\centering&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\includegraphics&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[width=8cm]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;图片.jpg&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\caption&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;图片标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;figure&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中，&lt;code&gt;[htbp]&lt;/code&gt;的作用是自动选择插入图片的最优位置，&lt;code&gt;\centering&lt;/code&gt;设置让图片居中，&lt;code&gt;[width=8cm]&lt;/code&gt;设置了图片的宽度为8cm，&lt;code&gt;\caption{}&lt;/code&gt;用于设置图片的标题。&lt;/p&gt;
+&lt;h3 id=&#34;表格&#34;&gt;表格&lt;/h3&gt;
+&lt;p&gt;LaTeX中表格的插入较为麻烦，可以直接使用&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//www.tablesgenerator.com/%23&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Create LaTeX tables online – TablesGenerator.com&lt;/a&gt;来生成。建议使用如下方式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;table&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[htbp]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\centering&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\caption&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;表格标题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;tabular&lt;span class=&#34;nb&#34;&gt;}{&lt;/span&gt;ccc&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        1 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 2 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 3 &lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        4 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 5 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 6 &lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        7 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 8 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 9
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;tabular&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;table&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;列表&#34;&gt;列表&lt;/h3&gt;
+&lt;p&gt;LaTeX中的列表环境包含无序列表&lt;code&gt;itemize&lt;/code&gt;、有序列表&lt;code&gt;enumerate&lt;/code&gt;和描述&lt;code&gt;description&lt;/code&gt;，以&lt;code&gt;enumerate&lt;/code&gt;为例，用法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt; 这是第一点; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt; 这是第二点;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt; 这是第三点. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，也可以自定义&lt;code&gt;\item&lt;/code&gt;的样式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[(1)]&lt;/span&gt; 这是第一点; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[(2)]&lt;/span&gt; 这是第二点;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\item&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;[(3)]&lt;/span&gt; 这是第三点. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;定理环境&#34;&gt;定理环境&lt;/h3&gt;
+&lt;p&gt;定理环境需要使用&lt;code&gt;amsthm&lt;/code&gt;宏包，首先在导言区加入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;\newtheorem{theorem}{定理}[section]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中&lt;code&gt;{theorem}&lt;/code&gt;是环境的名称，&lt;code&gt;{定理}&lt;/code&gt;设置了该环境显示的名称是“定理”，&lt;code&gt;[section]&lt;/code&gt;的作用是让&lt;code&gt;theorem&lt;/code&gt;环境在每个section中单独编号。在正文中，用如下方式来加入一条定理：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;theorem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[定理名称]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    这里是定理的内容. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;theorem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中&lt;code&gt;[定理名称]&lt;/code&gt;不是必须的。另外，我们还可以建立新的环境，如果要让新的环境和&lt;code&gt;theorem&lt;/code&gt;环境一起计数的话，可以用如下方式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;theorem&lt;span class=&#34;nb&#34;&gt;}{&lt;/span&gt;定理&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[section]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;definition&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;定义&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;lemma&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;引理&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;corollary&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;推论&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;example&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;例&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\newtheorem&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;proposition&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;[theorem]&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;命题&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，定理的证明可以直接用&lt;code&gt;proof&lt;/code&gt;环境。&lt;/p&gt;
+&lt;h3 id=&#34;页面&#34;&gt;页面&lt;/h3&gt;
+&lt;p&gt;最开始选择文件类型时，我们设置的页面大小是a4paper，除此之外，我们也可以修改页面大小为b5paper等等。&lt;/p&gt;
+&lt;p&gt;一般情况下，LaTeX默认的页边距很大，为了让每一页显示的内容更多一些，我们可以使用&lt;code&gt;geometry&lt;/code&gt;宏包，并在导言区加入以下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;geometry&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\geometry&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，为了设置行间距，可以使用如下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\linespread&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;1.5&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;页码&#34;&gt;页码&lt;/h3&gt;
+&lt;p&gt;默认的页码编码方式是&lt;a href=&#34;https://www.zhihu.com/search?q=%e9%98%bf%e6%8b%89%e4%bc%af%e6%95%b0%e5%ad%97&amp;amp;search_source=Entity&amp;amp;hybrid_search_source=Entity&amp;amp;hybrid_search_extra=%7b%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22456055339%22%7d&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿拉伯数字&lt;/a&gt;，用户也可以自己设置为小写罗马数字：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;roman&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，&lt;code&gt;aiph&lt;/code&gt;表示小写字母，&lt;code&gt;Aiph&lt;/code&gt;表示大写字母，&lt;code&gt;Roman&lt;/code&gt;表示大写罗马数字，&lt;code&gt;arabic&lt;/code&gt;表示默认的阿拉伯数字。如果要设置页码的话，可以用如下代码来设置页码从0开始：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\setcounter{page}{0}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;latex数学公式&#34;&gt;Latex数学公式&lt;/h1&gt;
+&lt;h2 id=&#34;字体&#34;&gt;字体&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数学表达式&lt;/th&gt;
+&lt;th&gt;Latex公式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;花体A&lt;/td&gt;
+&lt;td&gt;$\mathbb{A}$&lt;/td&gt;
+&lt;td&gt;\mathbb{A}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;手写体N&lt;/td&gt;
+&lt;td&gt;$\mathcal{N}$&lt;/td&gt;
+&lt;td&gt;\mathcal{N}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;希腊&#34;&gt;希腊&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;序号&lt;/th&gt;
+&lt;th&gt;大写&lt;/th&gt;
+&lt;th&gt;小写&lt;/th&gt;
+&lt;th&gt;英文注音&lt;/th&gt;
+&lt;th&gt;国际音标注音&lt;/th&gt;
+&lt;th&gt;中文注音&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Α&lt;/td&gt;
+&lt;td&gt;α&lt;/td&gt;
+&lt;td&gt;alpha&lt;/td&gt;
+&lt;td&gt;a:lf&lt;/td&gt;
+&lt;td&gt;阿尔法&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Β&lt;/td&gt;
+&lt;td&gt;β&lt;/td&gt;
+&lt;td&gt;beta&lt;/td&gt;
+&lt;td&gt;bet&lt;/td&gt;
+&lt;td&gt;贝塔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Γ&lt;/td&gt;
+&lt;td&gt;γ&lt;/td&gt;
+&lt;td&gt;gamma&lt;/td&gt;
+&lt;td&gt;ga:m&lt;/td&gt;
+&lt;td&gt;伽马&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Δ&lt;/td&gt;
+&lt;td&gt;δ&lt;/td&gt;
+&lt;td&gt;delta&lt;/td&gt;
+&lt;td&gt;delt&lt;/td&gt;
+&lt;td&gt;德尔塔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Ε&lt;/td&gt;
+&lt;td&gt;ε&lt;/td&gt;
+&lt;td&gt;epsilon&lt;/td&gt;
+&lt;td&gt;ep`silon&lt;/td&gt;
+&lt;td&gt;伊普西龙&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Ζ&lt;/td&gt;
+&lt;td&gt;ζ&lt;/td&gt;
+&lt;td&gt;zeta&lt;/td&gt;
+&lt;td&gt;zat&lt;/td&gt;
+&lt;td&gt;截塔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Η&lt;/td&gt;
+&lt;td&gt;η&lt;/td&gt;
+&lt;td&gt;eta&lt;/td&gt;
+&lt;td&gt;eit&lt;/td&gt;
+&lt;td&gt;艾塔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;Θ&lt;/td&gt;
+&lt;td&gt;θ&lt;/td&gt;
+&lt;td&gt;theta&lt;/td&gt;
+&lt;td&gt;θit&lt;/td&gt;
+&lt;td&gt;西塔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Ι&lt;/td&gt;
+&lt;td&gt;ι&lt;/td&gt;
+&lt;td&gt;iot&lt;/td&gt;
+&lt;td&gt;aiot&lt;/td&gt;
+&lt;td&gt;约塔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;Κ&lt;/td&gt;
+&lt;td&gt;κ&lt;/td&gt;
+&lt;td&gt;kappa&lt;/td&gt;
+&lt;td&gt;kap&lt;/td&gt;
+&lt;td&gt;卡帕&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;Λ&lt;/td&gt;
+&lt;td&gt;λ&lt;/td&gt;
+&lt;td&gt;lambda&lt;/td&gt;
+&lt;td&gt;lambd&lt;/td&gt;
+&lt;td&gt;兰布达&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;Μ&lt;/td&gt;
+&lt;td&gt;μ&lt;/td&gt;
+&lt;td&gt;mu&lt;/td&gt;
+&lt;td&gt;mju&lt;/td&gt;
+&lt;td&gt;缪&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;Ν&lt;/td&gt;
+&lt;td&gt;ν&lt;/td&gt;
+&lt;td&gt;nu&lt;/td&gt;
+&lt;td&gt;nju&lt;/td&gt;
+&lt;td&gt;纽&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;Ξ&lt;/td&gt;
+&lt;td&gt;ξ&lt;/td&gt;
+&lt;td&gt;xi&lt;/td&gt;
+&lt;td&gt;ksi&lt;/td&gt;
+&lt;td&gt;克西&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;Ο&lt;/td&gt;
+&lt;td&gt;ο&lt;/td&gt;
+&lt;td&gt;omicron&lt;/td&gt;
+&lt;td&gt;omik`ron&lt;/td&gt;
+&lt;td&gt;奥密克戎&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;Π&lt;/td&gt;
+&lt;td&gt;π&lt;/td&gt;
+&lt;td&gt;pi&lt;/td&gt;
+&lt;td&gt;pai&lt;/td&gt;
+&lt;td&gt;派&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;Ρ&lt;/td&gt;
+&lt;td&gt;ρ&lt;/td&gt;
+&lt;td&gt;rho&lt;/td&gt;
+&lt;td&gt;rou&lt;/td&gt;
+&lt;td&gt;肉&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;Σ&lt;/td&gt;
+&lt;td&gt;σ&lt;/td&gt;
+&lt;td&gt;sigma&lt;/td&gt;
+&lt;td&gt;`sigma&lt;/td&gt;
+&lt;td&gt;西格马&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;Τ&lt;/td&gt;
+&lt;td&gt;τ&lt;/td&gt;
+&lt;td&gt;tau&lt;/td&gt;
+&lt;td&gt;tau&lt;/td&gt;
+&lt;td&gt;套&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Υ&lt;/td&gt;
+&lt;td&gt;υ&lt;/td&gt;
+&lt;td&gt;upsilon&lt;/td&gt;
+&lt;td&gt;jup`silon&lt;/td&gt;
+&lt;td&gt;宇普西龙&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;Φ&lt;/td&gt;
+&lt;td&gt;φ&lt;/td&gt;
+&lt;td&gt;phi&lt;/td&gt;
+&lt;td&gt;fai&lt;/td&gt;
+&lt;td&gt;佛爱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;td&gt;Χ&lt;/td&gt;
+&lt;td&gt;χ&lt;/td&gt;
+&lt;td&gt;chi&lt;/td&gt;
+&lt;td&gt;phai&lt;/td&gt;
+&lt;td&gt;西&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;Ψ&lt;/td&gt;
+&lt;td&gt;ψ&lt;/td&gt;
+&lt;td&gt;psi&lt;/td&gt;
+&lt;td&gt;psai&lt;/td&gt;
+&lt;td&gt;普西&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;24&lt;/td&gt;
+&lt;td&gt;Ω&lt;/td&gt;
+&lt;td&gt;ω&lt;/td&gt;
+&lt;td&gt;omega&lt;/td&gt;
+&lt;td&gt;o`miga&lt;/td&gt;
+&lt;td&gt;欧米伽&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;符号&#34;&gt;符号&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数学表达式&lt;/th&gt;
+&lt;th&gt;Latex公式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;黑点&lt;/td&gt;
+&lt;td&gt;$\bullet$&lt;/td&gt;
+&lt;td&gt;\bullet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;上撇&lt;/td&gt;
+&lt;td&gt;$\prime$&lt;/td&gt;
+&lt;td&gt;\prime&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;上撇&lt;/td&gt;
+&lt;td&gt;$f^{\prime}$&lt;/td&gt;
+&lt;td&gt;f^{\prime}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;无穷&lt;/td&gt;
+&lt;td&gt;$\infty$&lt;/td&gt;
+&lt;td&gt;\infty&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;偏导&lt;/td&gt;
+&lt;td&gt;$\partial$&lt;/td&gt;
+&lt;td&gt;\partial&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;梯度&lt;/td&gt;
+&lt;td&gt;$\nabla$&lt;/td&gt;
+&lt;td&gt;\nabla&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;关系式&#34;&gt;关系式&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数学表达式&lt;/th&gt;
+&lt;th&gt;Latex公式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;大于等于&lt;/td&gt;
+&lt;td&gt;$\geq$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\geq$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小于等于&lt;/td&gt;
+&lt;td&gt;$\leq$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\leq$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;不等于&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cnot%3D&#34; alt=&#34;\not=&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$not=$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;不小于&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cnot%3C&#34; alt=&#34;\not&amp;amp;lt;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\not&amp;lt;$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;约等于&lt;/td&gt;
+&lt;td&gt;$\approx$&lt;/td&gt;
+&lt;td&gt;\approx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;定义&lt;/td&gt;
+&lt;td&gt;$\triangleq{}$&lt;/td&gt;
+&lt;td&gt;\triangleq{}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;属于&#34;&gt;属于&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数学表达式&lt;/th&gt;
+&lt;th&gt;Latex公式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;包含于&lt;/td&gt;
+&lt;td&gt;$\subset$&lt;/td&gt;
+&lt;td&gt;\subset&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;真包含&lt;/td&gt;
+&lt;td&gt;$\subset$&lt;/td&gt;
+&lt;td&gt;\subset&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;包含&lt;/td&gt;
+&lt;td&gt;$\supset$&lt;/td&gt;
+&lt;td&gt;\supset&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;不包含&lt;/td&gt;
+&lt;td&gt;$\not\supset$&lt;/td&gt;
+&lt;td&gt;\not\supset&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;属于&lt;/td&gt;
+&lt;td&gt;$\in$&lt;/td&gt;
+&lt;td&gt;\in&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;相交&lt;/td&gt;
+&lt;td&gt;$\cap$&lt;/td&gt;
+&lt;td&gt;\cap&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;相并&lt;/td&gt;
+&lt;td&gt;$\cup$&lt;/td&gt;
+&lt;td&gt;\cup&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;空集&lt;/td&gt;
+&lt;td&gt;$\emptyset$&lt;/td&gt;
+&lt;td&gt;\emptyset&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;乘除法&#34;&gt;乘除法&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数学表达式&lt;/th&gt;
+&lt;th&gt;Latex公式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;加减&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cpm&#34; alt=&#34;\pm&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\pm$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;点乘&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Ccdot&#34; alt=&#34;\cdot&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$cdot$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;乘&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Ctimes&#34; alt=&#34;\times&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\times&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;除&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://math.jianshu.com/math?formula=%5Cdiv&#34; alt=&#34;\div&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\div$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;乘法点&lt;/td&gt;
+&lt;td&gt;$\cdot$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\cdot$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;上标帽子&#34;&gt;上标帽子&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数学表达式&lt;/th&gt;
+&lt;th&gt;Latex公式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\overline{a}$&lt;/td&gt;
+&lt;td&gt;\overline{a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\hat{a}$&lt;/td&gt;
+&lt;td&gt;\hat{a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\widehat{a}$&lt;/td&gt;
+&lt;td&gt;\widehat{a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\overline{a}$&lt;/td&gt;
+&lt;td&gt;\overline{a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\widetilde{a}$&lt;/td&gt;
+&lt;td&gt;\widetilde{a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\dot{a}$&lt;/td&gt;
+&lt;td&gt;\dot{a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\ddot{a}$&lt;/td&gt;
+&lt;td&gt;\ddot{a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;符号上下标&#34;&gt;符号上下标&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数学表达式&lt;/th&gt;
+&lt;th&gt;Latex公式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$\hat \beta = \underset{\beta}{\arg \min} L(\beta)$&lt;/td&gt;
+&lt;td&gt;\underset{?}{?}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数学符号&lt;/td&gt;
+&lt;td&gt;$\sum\limits_{i=1}$&lt;/td&gt;
+&lt;td&gt;\limits&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;普通符号&lt;/td&gt;
+&lt;td&gt;$\mathop{\lambda}\limits_{i=1}$先\mathop转换，再\limits&lt;/td&gt;
+&lt;td&gt;\mathop{\lambda}\limits_{i=1}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;等号上标&lt;/td&gt;
+&lt;td&gt;$\overset{\text{def}}{=}$&lt;/td&gt;
+&lt;td&gt;\usepackage{amsmath}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;等号下标&lt;/td&gt;
+&lt;td&gt;$\underset{\text{heated}}{=}$&lt;/td&gt;
+&lt;td&gt;\usepackage{amsmath}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;箭头&#34;&gt;箭头&lt;/h2&gt;
+&lt;p&gt;箭头
+数学算式	Markdown公式	核心语法
+↑ \uparrow↑	\uparrow	
+↓ \downarrow↓	\downarrow	
+↕ \updownarrow↕	\updownarrow	
+⇑ \Uparrow⇑	\Uparrow	
+⇓ \Downarrow⇓	\Downarrow	
+⇕ \Updownarrow⇕	\Updownarrow	
+→ \rightarrow→	\rightarrow	
+← \leftarrow←	\leftarrow	
+↔ \leftrightarrow↔	\leftrightarrow	
+⇒ \Rightarrow⇒	\Rightarrow	
+⇐ \Leftarrow⇐	\Leftarrow	
+⇔ \Leftrightarrow⇔	\Leftrightarrow	
+⟶ \longrightarrow⟶	\longrightarrow	
+⟵ \longleftarrow⟵	\longleftarrow	
+⟷ \longleftrightarrow⟷	\longleftrightarrow	
+⟹ \Longrightarrow⟹	\Longrightarrow	
+⟸ \Longleftarrow⟸	\Longleftarrow	
+⟺ \Longleftrightarrow⟺	\Longleftrightarrow&lt;/p&gt;
+&lt;h2 id=&#34;排列方程组&#34;&gt;排列方程组&lt;/h2&gt;
+&lt;p&gt;使方程组对其，使用array环境，从begin到end中间的部分表示都是array阵列中的内容&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;l代表左对齐，r代表右对齐，c代表居中&lt;/li&gt;
+&lt;li&gt;&amp;amp;表示间隔符，每行的$会自动对齐&lt;/li&gt;
+&lt;li&gt;其中，{array}{l}表示一列的排列方式，而使用了&amp;amp;后，左右各两列，此处应该使用{array}{ll}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;array&lt;span class=&#34;nb&#34;&gt;}{&lt;/span&gt;l代表左对齐，r代表右对齐，c代表居中&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\nabla\cdot&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;E&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt;=0&lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\nabla\cdot&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;B&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt;=0&lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\nabla\times&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;E&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt;=0&lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;array&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;$$
+\begin{array}{l代表左对齐，r代表右对齐，c代表居中}
+\nabla\cdot \mathbf{E} &amp;amp;=0\
+\nabla\cdot \mathbf{B} &amp;amp;=0\
+\nabla\times \mathbf{E} &amp;amp;=0\
+\end{array}
+$$
+还可以使用align环境，有备注功能，&amp;amp;&amp;amp;&lt;/p&gt;
+&lt;p&gt;如果希望使用大括号可以添加&lt;code&gt;\left\{ \right&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;左括号&lt;/td&gt;
+&lt;td&gt;$\left{ \right.$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\left\{ \right.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;矩阵&#34;&gt;矩阵：&lt;/h2&gt;
+&lt;p&gt;$$
+\mu=\left[
+\begin{matrix}
+\mu_1\
+\mu_2\
+&amp;hellip;\
+\mu_n
+\end{matrix} \right]
+=\frac{1}{m}\sum_{i=1}^mx^{(i)}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\mu=\left[
+\begin{matrix}
+1 &amp;amp; 2 &amp;amp; 3\
+4 &amp;amp; 5 &amp;amp; 6\
+&amp;hellip;\
+4 &amp;amp; 5 &amp;amp; 6
+\end{matrix} \right]
+=\frac{1}{m}\sum_{i=1}^mx^{(i)}\tag{1}
+$$&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;$\begin{matrix}a&amp;amp;b\c&amp;amp;d\end{matrix}$&lt;/td&gt;
+&lt;td&gt;matrix&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;圆括号&lt;/td&gt;
+&lt;td&gt;$\begin{pmatrix}a&amp;amp;b\c&amp;amp;d\end{pmatrix}$&lt;/td&gt;
+&lt;td&gt;pmatrix&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;方括号&lt;/td&gt;
+&lt;td&gt;$\begin{bmatrix}a&amp;amp;b\c&amp;amp;d\end{bmatrix}$&lt;/td&gt;
+&lt;td&gt;bmaritx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;行列式&lt;/td&gt;
+&lt;td&gt;$\begin{vmatrix}a&amp;amp;b\c&amp;amp;d\end{vmatrix}$&lt;/td&gt;
+&lt;td&gt;vmatrix&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;大括号&lt;/td&gt;
+&lt;td&gt;$\begin{Bmatrix}a&amp;amp;b\c&amp;amp;d\end{Bmatrix}$&lt;/td&gt;
+&lt;td&gt;Bmatrix&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;范数&lt;/td&gt;
+&lt;td&gt;$\begin{Vmatrix}a&amp;amp;b\c&amp;amp;d\end{Vmatrix}$&lt;/td&gt;
+&lt;td&gt;Vmatrix&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;横三点&lt;/td&gt;
+&lt;td&gt;$\cdots$&lt;/td&gt;
+&lt;td&gt;\cdots&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;竖三点&lt;/td&gt;
+&lt;td&gt;$\vdots$&lt;/td&gt;
+&lt;td&gt;\vdots&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;斜三点&lt;/td&gt;
+&lt;td&gt;$\ddots$&lt;/td&gt;
+&lt;td&gt;\ddots&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;语法&#34;&gt;语法&lt;/h2&gt;
+&lt;h3 id=&#34;公式左对齐&#34;&gt;公式左对齐&lt;/h3&gt;
+&lt;p&gt;$$
+y=\left{
+\begin{matrix}
+1 &amp;amp;&amp;amp; if \quad p(x)\leq\epsilon \quad(非正常) \hfill\
+0 &amp;amp;&amp;amp; if \quad p(x)\geq\epsilon \quad(正常)\hfill
+\end{matrix}
+\right.
+$$&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;to apply an operation along a dimension,We can use the Tensor.view() function to reshape tensors similarly to numpy.reshape()
+
+It can also automatically calculate the correct dimension if a -1 is passed in. This is useful if we are working with batches, but the batch size is unknown.
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>命令与环境配置</title>
+      <link>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://Zhang-maozhen.github.io/post/%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;h1 id=&#34;conda&#34;&gt;Conda&lt;/h1&gt;
+&lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;h3 id=&#34;对于conda的一些理解&#34;&gt;对于conda的一些理解&lt;/h3&gt;
+&lt;p&gt;作为一个虚拟环境配置管理软件，可以在电脑自身环境外创造虚拟环境(base是自身创造的虚拟环境)&lt;/p&gt;
+&lt;p&gt;在每个虚拟环境中就会相当于一个电脑（如虚拟机）&lt;/p&gt;
+&lt;p&gt;Pycharm等IDE开发工具可以选择conda中的某一个虚拟环境使用，进行的操作（更新、安装、删除）都会直接对虚拟环境进行操作&lt;/p&gt;
+&lt;p&gt;可再Pycharm中的setting中查看虚拟环境的包，同&lt;code&gt;conda list&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;shell-conda配置&#34;&gt;shell Conda配置&lt;/h3&gt;
+&lt;h4 id=&#34;环境&#34;&gt;环境&lt;/h4&gt;
+&lt;p&gt;查看当前系统环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda info -e
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda env list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建新的环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 指定python版本为2.7，注意至少需要指定python版本或者要安装的包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 自动安装python2.7最新版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda create -n env_name &lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2.7
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 同时安装必要的包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda create -n env_name numpy matplotlib &lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2.7
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda remove -n envs_name --all
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;克隆环境&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda create -n new_env1 new_env
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;环境切换&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 切换到新环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# linux/Mac下需要使用source activate env_name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda activate env_name
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#退出环境，也可以使用`activate root`切回root环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda deactivate env_name
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看当前环境的所有包&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda list
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;镜像&#34;&gt;镜像&lt;/h4&gt;
+&lt;p&gt;镜像源&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --show
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看配置项&lt;code&gt;channels&lt;/code&gt;，如果显示带有&lt;code&gt;tsinghua&lt;/code&gt;,则说明已经安装过清华镜像&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;channels:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;conda config --removecjannels url 地址&lt;/code&gt;删除清华镜像，如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --removecjannels url https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;添加中科大镜像&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;设置搜索时显示通道地址&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --set show_channel_urls yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;配置虚拟环境的jupyter&#34;&gt;配置虚拟环境的jupyter&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install ipykernel
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#设置jupyter的名称，jupyterName是显示在jupyter的名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python -m ipykernel install --name jupyterName
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#执行打开jupyter notebook&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;jupyter notebook
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#如果发现jupyter notebook not found，则需要进行安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install jupyter notebook
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;升级命令&#34;&gt;升级命令&lt;/h3&gt;
+&lt;h4 id=&#34;pip升级&#34;&gt;pip升级&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python -m pip install --upgrade pip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;包升级&#34;&gt;包升级&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install --upgrade 包名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#如&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install --upgrade matplotlib
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
+&lt;h5 id=&#34;代码运行不报错直接结束排查发现在导入库名处终止&#34;&gt;代码运行不报错，直接结束，排查发现在导入库名处终止&lt;/h5&gt;
+&lt;p&gt;异常原因：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;导入的包或许需要升级，兼容性存在问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解决方法，升级/降级库版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install --upgrade matplotlib
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;报错源路径下找不到current_repodatajson&#34;&gt;报错源路径下找不到&lt;code&gt;current_repodata.json&lt;/code&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 报错信息：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PS C:&lt;span class=&#34;se&#34;&gt;\U&lt;/span&gt;sers&lt;span class=&#34;se&#34;&gt;\M&lt;/span&gt;z&amp;gt; conda create -n env_python2 &lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2.7
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Collecting package metadata &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;current_repodata.json&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;: failed
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CondaHTTPError: HTTP &lt;span class=&#34;m&#34;&gt;000&lt;/span&gt; CONNECTION FAILED &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; url &amp;lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64/current_repodata.json&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Elapsed: -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;An HTTP error occurred when trying to retrieve this URL.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;HTTP errors are often intermittent, and a simple retry will get you on your way.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更改方法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在进行常规操作的时候，比如创建一个虚拟环境，会报找不到&lt;code&gt;current_repodata.json&lt;/code&gt;这个文件，这个时候，把路径&lt;code&gt;Anaconda3/Library/bin&lt;/code&gt;目录下的&lt;code&gt;libcrypto-1_1-x64.dll&lt;/code&gt;和&lt;code&gt;libssl-1_1-x64.dll&lt;/code&gt;拷贝到&lt;code&gt;Anaconda3/DLLs&lt;/code&gt;目录下即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;git&#34;&gt;Git&lt;/h1&gt;
+&lt;h2 id=&#34;git与github连接&#34;&gt;Git与github连接&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;创建SSH Key&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本地Git仓库和GitHub仓库之间通过SSH加密传输的，GitHub需要识别是否是你的推送，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送，所以需要配置SSh Key&lt;/p&gt;
+&lt;p&gt;产生的密码在用户主目录下，id_rsa和id_rsa.pub两个目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;ssh-keygen -t rsa -C&amp;#34;1209173759@qq.com&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;登录github上，在&lt;code&gt;SSH and GPG keys&lt;/code&gt;页面Add SSH Key粘贴id_rsa.pub文件里的全部内容&lt;/li&gt;
+&lt;li&gt;检验是否添加成功，在git bash里面输入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;设置username和email，github每次commit都会记录该信息（分别是哪个用户进行的上传）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;git config --global user.name &amp;#34;name&amp;#34;//github登录名，上传信息的名字
+git config --global user.email &amp;#34;email&amp;#34;//你的github注册邮箱
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;把本地仓库传到github上/把远程仓库下载到本地&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//本地仓库传到github上
+git remote add origin git@github.com:Zhang-Maozen/仓库名.git
+git push -u origin master
+
+//远程仓库下载到本地
+git clone HTTPS //HTTPS是github上的连接地址 //会将连接下载到本地仓库，作为一个项目文件
+cd projectName
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;git操作&#34;&gt;Git操作&lt;/h2&gt;
+&lt;h3 id=&#34;git上传文件到远程仓库&#34;&gt;Git上传文件到远程仓库&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;//起名为origin
+git remote add origin https://gitee.com/Danerszz/my-note.git
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;查看状态&#34;&gt;查看状态&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote 
+git remote -v
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以查看到别名， 一般默认为origin&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote show origin 显示详细信息
+git remote rm origin 删除此别名的长裤设置
+git remote add 仓库别名 Url
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;删除连接&#34;&gt;删除连接&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote rm origin
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加连接&#34;&gt;添加连接&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//本地仓库传到github上
+git remote add origin git@github.com:Zhang-Maozen/仓库名.git
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;分支&#34;&gt;分支&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#查看分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#创建分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch newBranchName
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#切换分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout branchName
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#推送分支到远程&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin branchName
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#查看远程分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;获取远程库与本地同步合并&#34;&gt;获取远程库与本地同步合并&lt;/h3&gt;
+&lt;p&gt;如果远程库不为空必须做这一步，否则后面的提交会失败&lt;/p&gt;
+&lt;p&gt;//不加这句可能报错，原因是 github 中的 README.md 文件不在本地仓库中
+//可以通过该命令进行代码合并***&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull --rebase origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;问题-1&#34;&gt;问题&lt;/h3&gt;
+&lt;h4 id=&#34;撤销commit同时保留git-add&#34;&gt;撤销commit，同时保留git add&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;reset&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;soft&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HEAD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;删除工作空间改动的代码撤销commit并且撤销git-add&#34;&gt;删除工作空间改动的代码，撤销commit，并且撤销git add&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset --hard HEAD^
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;修改git-commit注释内容&#34;&gt;修改git commit注释内容&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git commit --amend
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;还没git--commit-只撤销git-add此时会保留本地修改绿字变红字&#34;&gt;还没git  commit ,只撤销git add,此时会保留本地修改（绿字变红字）&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset HEAD filename
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;错误&#34;&gt;错误&lt;/h2&gt;
+&lt;h4 id=&#34;fatal-refusing-to-merge-unrelated-histories&#34;&gt;fatal: refusing to merge unrelated histories&lt;/h4&gt;
+&lt;p&gt;本地仓库在想做同步远程仓库到本地为之后本地仓库推送到远程仓库做准备时报错了，错误如下：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解决：出现这个问题的最主要原因还是在于本地仓库和远程仓库实际上是独立的两个仓库。假如我之前是直接clone的方式在本地建立起远程github仓库的克隆本地仓库就不会有这问题了。&lt;/p&gt;
+&lt;p&gt;查阅了一下资料，发现可以在pull命令后紧接着使用&lt;code&gt;--allow-unrelated-history&lt;/code&gt;选项来解决问题（该选项可以合并两个独立启动仓库的历史）。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$git pull origin master --allow-unrelated-histories
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;openssl-ssl_connect-connection-was-reset-in-connection-to-githubcom443&#34;&gt;OpenSSL SSL_connect: Connection was reset in connection to github.com:443&lt;/h4&gt;
+&lt;p&gt;查看全局配置：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global -l
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;已有设置情况修改代理项：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global --unset http.proxy 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果使用过VPN或者代理，关机时未关，通过cmd下命令行ipconfig/flushdns清理dns缓存&lt;/p&gt;
+&lt;h2 id=&#34;个人主页与git操作&#34;&gt;个人主页与GIt操作&lt;/h2&gt;
+&lt;h3 id=&#34;发布到master&#34;&gt;发布到master&lt;/h3&gt;
+&lt;p&gt;仓库中创建&lt;code&gt;\docs&lt;/code&gt;，将生成的静态网页放入，在仓库&lt;code&gt;setting&lt;/code&gt;页面选择&lt;code&gt;pages&lt;/code&gt;，选择生成原路径&lt;code&gt;docs&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;发布到gh-pages-branch&#34;&gt;发布到gh-pages branch&lt;/h3&gt;
+&lt;p&gt;如果希望单独控制源文档和生成的网页文档的版本历史，可以使用单独建立一个&lt;code&gt;gh-pages branch&lt;/code&gt;的方法托管到&lt;code&gt;Github Pages&lt;/code&gt;——先将&lt;code&gt;/public&lt;/code&gt;子目录添加到&lt;code&gt;.gitignore&lt;/code&gt;中，让&lt;code&gt;master branch&lt;/code&gt;忽略其更新，然后在本地和Github端添加一个名为&lt;code&gt;gh-pages&lt;/code&gt;的branch：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//忽略public子目录
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;public&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; .gitignore
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//初始化gh-pages branch
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout --orphan gh-pages
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git reset --hard
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit --allow-empty -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;Initializing gh-pages branch&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin gh-pages
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;linux&#34;&gt;Linux&lt;/h1&gt;
+&lt;h3 id=&#34;linux的档案调用权限&#34;&gt;Linux的档案调用权限&lt;/h3&gt;
+&lt;p&gt;三级：档案拥有者、群组、其他&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;u°表示该档案的拥有者&lt;/li&gt;
+&lt;li&gt;g°表示与该党案的拥有者属于同一个群体（group）者&lt;/li&gt;
+&lt;li&gt;o°表示其他以外的人&lt;/li&gt;
+&lt;li&gt;a°表示三者都是&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;tar-压缩解压&#34;&gt;&lt;code&gt;tar&lt;/code&gt; 压缩解压&lt;/h3&gt;
+&lt;p&gt;压缩文件 非打包,将test.tar.gz压缩为a.c&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tar -czvf test.tar.gz a.c&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;列出压缩文件内容&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tar -tzvf test.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;将解压名.tar.gz解压到当前目录&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tar -xzvf 解压名.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-链接文件并打印到标准输出设备上&#34;&gt;&lt;code&gt;cat&lt;/code&gt; 链接文件并打印到标准输出设备上&lt;/h3&gt;
+&lt;p&gt;语法格式：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat [-AbeEnstTuv] [--help] [--version] filename&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;-n 或 &amp;ndash;number&lt;/strong&gt;：由 1 开始对所有输出的行数编号。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-b 或 &amp;ndash;number-nonblank&lt;/strong&gt;：和 -n 相似，只不过对于空白行不编号。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-s 或 &amp;ndash;squeeze-blank&lt;/strong&gt;：当遇到有连续两行以上的空白行，就代换为一行的空白行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-v 或 &amp;ndash;show-nonprinting&lt;/strong&gt;：使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-E 或 &amp;ndash;show-ends&lt;/strong&gt; : 在每行结束处显示 $。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-T 或 &amp;ndash;show-tabs&lt;/strong&gt;: 将 TAB 字符显示为 ^I。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-A, &amp;ndash;show-all&lt;/strong&gt;：等价于 -vET。&lt;/li&gt;
+&lt;li&gt;**-e：**等价于&amp;quot;-vE&amp;quot;选项；&lt;/li&gt;
+&lt;li&gt;**-t：**等价于&amp;quot;-vT&amp;quot;选项；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;把textfile1的文档内容加上行号后输入textfile2文档中&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat -n textfile1 &amp;gt; textfile2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;把textfile1和testfile2的文档内容加上行号（空白行不加）之后将内容附加到textfile3文档里&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat -b textfile1 textfile2 &amp;gt;&amp;gt; textfile3&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;清空/etc/text.txt文档内容&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat /dev/null /etc/test.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;chmod--控制用户对文件的权限的命令&#34;&gt;&lt;code&gt;chmod &lt;/code&gt; 控制用户对文件的权限的命令&lt;/h3&gt;
+&lt;p&gt;chmoc [-cfvr] [&amp;ndash;help] [&amp;ndash;version] mode file &amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;-c : 若该文件权限确实已经更改，才显示其更改动作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;-f : 若该文件权限无法被更改也不要显示错误讯息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;-v : 显示权限变更的详细资料&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;-R : 对目前目录下的所有文件与子目录进行相同的权限变更(即以递归的方式逐个变更)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ndash;help : 显示辅助说明&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ndash;version : 显示版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;将文件file1.txt设为所有人皆可读：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod ugo+r file1.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;将文件file1.txt设为所有人皆可读取：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod a+r file1.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;将文件file1.txt与file2.txt设为该文件拥有者，与其所属一个群体着可写入，但其他以外的人则不可写入：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod ug+w,o-w file1.txt file2.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;将ex1.py设定为只有该文件拥有者可执行：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod u+x ex1.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;将目前目录下的所有文件与子目录皆设为任何人可读取：&lt;/p&gt;
+&lt;p&gt;chmod -R a+r *&lt;/p&gt;
+&lt;h2 id=&#34;ubuntu&#34;&gt;ubuntu&lt;/h2&gt;
+&lt;h3 id=&#34;安装桌面&#34;&gt;安装桌面&lt;/h3&gt;
+&lt;p&gt;更新apt&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;两种方法，安装桌面环境&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;apt安装&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;tasksel的Debian工具&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#tasksel&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tasksel install ubuntu-desktop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#apt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install ubuntu-desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装和配置显示管理器&lt;/p&gt;
+&lt;p&gt;默认GDM3，但过大，使用如下显示管理器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install lightdm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;用下面的命令启动显示管理器并加载 GUI：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;service&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;lightdm&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;start&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你可以使用下面的命令来检查当前的显示管理器：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;etc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;X11&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;manager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行后得到的结果类似这样：如果你想关闭 GUI，那么打开一个终端并输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;service&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;lightdm&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;stop&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>An image encryption algorithm based on new chaos and diffusion values of a truth table</title>
+      <link>https://Zhang-maozhen.github.io/publication/an-image-encryption-algorithm-based-on-new-chaos-and-diffusion-values-of-a-truth-table/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://Zhang-maozhen.github.io/publication/an-image-encryption-algorithm-based-on-new-chaos-and-diffusion-values-of-a-truth-table/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Slides</title>
       <link>https://Zhang-maozhen.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
@@ -11140,9 +11152,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>差分隐私</title>
-      <link>https://Zhang-maozhen.github.io/post/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81/differential-privacy/</link>
+      <link>https://Zhang-maozhen.github.io/post/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://Zhang-maozhen.github.io/post/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81/differential-privacy/</guid>
+      <guid>https://Zhang-maozhen.github.io/post/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81/</guid>
       <description>&lt;h1 id=&#34;差分隐私&#34;&gt;差分隐私&lt;/h1&gt;
 &lt;h2 id=&#34;差分隐私概念&#34;&gt;差分隐私概念&lt;/h2&gt;
 &lt;p&gt;差分隐私是算法的属性，而不是数据的属性，我们证明一个算法满足差分隐私。&lt;/p&gt;
