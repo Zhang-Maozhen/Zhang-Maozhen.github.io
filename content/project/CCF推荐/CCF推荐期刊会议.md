@@ -18,7 +18,7 @@ links:
     name: Follow
     url: https://github.com/Zhang-maozhen
 url_code: ''
-url_pdf: project/CCF推荐/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf
+url_pdf: content/project/CCF推荐/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf
 url_slides: ''
 url_video: ''
 
@@ -33,93 +33,93 @@ slides: ''
 
 # 会议
 
-| 等级 | 全称                                                         | 简称            | 类型 | 方向                                   |
-| ---- | ------------------------------------------------------------ | --------------- | ---- | -------------------------------------- |
-| A类  | ACM Transactions on Computer Systems                         | TOCS            | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | ACM Transactions on Storage                                  | TOS             | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
+| 等级 |                             全称                             | 简称            | 类型 | 方向                                   |
+| ---- | :----------------------------------------------------------: | --------------- | ---- | -------------------------------------- |
+| A类  |             ACM Transactions on Computer Systems             | TOCS            | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |                 ACM Transactions on Storage                  | TOS             | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
 | A类  | IEEE Transactions on Computer-Aided Design of Integrated Circuits And System | TCAD            | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | IEEE Transactions on Computers                               | TC              | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | IEEE Transactions on Parallel and Distributed Systems        | TPDS            | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |                IEEE Transactions on Computers                | TC              | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |    IEEE Transactions on Parallel and Distributed Systems     | TPDS            | 期刊 | 计算机体系结构/并行与分布计算/存储系统 |
 | A类  | ACM SIGPLAN Symposium on Principles & Practice of Parallel Programming | PPoPP           | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | Conference on File and Storage Technologies                  | FAST            | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | Design Automation Conference                                 | DAC             | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | High Performance Computer Architecture                       | HPCA            | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | IEEE/ACM International Symposium on Microarchitecture        | MICRO           | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |         Conference on File and Storage Technologies          | FAST            | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |                 Design Automation Conference                 | DAC             | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |            High Performance Computer Architecture            | HPCA            | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |    IEEE/ACM International Symposium on Microarchitecture     | MICRO           | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
 | A类  | International Conference for High Performance Computing, Networking, Storage, and Analysis | SC              | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
 | A类  | International Conference on Architectural Support for Programming Languages and Operating Systems | ASPLOS          | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | International Symposium on Computer Architecture             | ISCA            | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | USENIX Annul Technical Conference                            | USENIX ATC      | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
-| A类  | IEEE Journal of Selected Areas in Communications             | JSAC            | 期刊 | 计算机网络                             |
-| A类  | IEEE Transactions on Mobile Computing                        | TMC             | 期刊 | 计算机网络                             |
-| A类  | IEEE/ACM Transactions on Networking                          | TON             | 期刊 | 计算机网络                             |
+| A类  |       International Symposium on Computer Architecture       | ISCA            | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |              USENIX Annul Technical Conference               | USENIX ATC      | 会议 | 计算机体系结构/并行与分布计算/存储系统 |
+| A类  |       IEEE Journal of Selected Areas in Communications       | JSAC            | 期刊 | 计算机网络                             |
+| A类  |            IEEE Transactions on Mobile Computing             | TMC             | 期刊 | 计算机网络                             |
+| A类  |             IEEE/ACM Transactions on Networking              | TON             | 期刊 | 计算机网络                             |
 | A类  | ACM International Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication | SIGCOMM         | 会议 | 计算机网络                             |
 | A类  | ACM International Conference on Mobile Computing and Networking | MobiCom         | 会议 | 计算机网络                             |
-| A类  | IEEE International Conference on Computer Communications     | INFOCOM         | 会议 | 计算机网络                             |
-| A类  | Symposium on Network System Design and Implementation        | NSDI            | 会议 | 计算机网络                             |
-| A类  | IEEE Transactions on Information Forensics and Securit       | TITF            | 期刊 | 网络与信息安全                         |
-| A类  | IEEE Transactions on Dependable and Secure Computing         | TDSC            | 期刊 | 网络与信息安全                         |
-| A类  | Journal of Cryptology                                        |                 | 期刊 | 网络与信息安全                         |
-| A类  | ACM Conference on Computer and Communications Security       | CCS             | 会议 | 网络与信息安全                         |
-| A类  | European Cryptology Conference                               | EUROCRYPT       | 会议 | 网络与信息安全                         |
-| A类  | IEEE Symposium on Security and Privacy                       | S&P             | 会议 | 网络与信息安全                         |
-| A类  | International Cryptology Conference                          | CRYPTO          | 会议 | 网络与信息安全                         |
-| A类  | Usenix Security Symposium                                    | USENIX Security | 会议 | 网络与信息安全                         |
-| A类  | ACM Transactions on Programming Languages & Systems          | TOPLAS          | 期刊 | 软件工程/系统软件/程序设计语言         |
-| A类  | ACM Transactions on Software Engineering and Methodology     | TOSEM           | 期刊 | 软件工程/系统软件/程序设计语言         |
-| A类  | IEEE Transactions on Software Engineering                    | TSE             | 期刊 | 软件工程/系统软件/程序设计语言         |
+| A类  |   IEEE International Conference on Computer Communications   | INFOCOM         | 会议 | 计算机网络                             |
+| A类  |    Symposium on Network System Design and Implementation     | NSDI            | 会议 | 计算机网络                             |
+| A类  |    IEEE Transactions on Information Forensics and Securit    | TITF            | 期刊 | 网络与信息安全                         |
+| A类  |     IEEE Transactions on Dependable and Secure Computing     | TDSC            | 期刊 | 网络与信息安全                         |
+| A类  |                    Journal of Cryptology                     |                 | 期刊 | 网络与信息安全                         |
+| A类  |    ACM Conference on Computer and Communications Security    | CCS             | 会议 | 网络与信息安全                         |
+| A类  |                European Cryptology Conference                | EUROCRYPT       | 会议 | 网络与信息安全                         |
+| A类  |            IEEE Symposium on Security and Privacy            | S&P             | 会议 | 网络与信息安全                         |
+| A类  |             International Cryptology Conference              | CRYPTO          | 会议 | 网络与信息安全                         |
+| A类  |                  Usenix Security Symposium                   | USENIX Security | 会议 | 网络与信息安全                         |
+| A类  |     ACM Transactions on Programming Languages & Systems      | TOPLAS          | 期刊 | 软件工程/系统软件/程序设计语言         |
+| A类  |   ACM Transactions on Software Engineering and Methodology   | TOSEM           | 期刊 | 软件工程/系统软件/程序设计语言         |
+| A类  |          IEEE Transactions on Software Engineering           | TSE             | 期刊 | 软件工程/系统软件/程序设计语言         |
 | A类  | ACM SIGPLAN Conference on Programming Language Design & Implementation | PLDI            | 会议 | 软件工程/系统软件/程序设计语言         |
 | A类  | ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages | POPL            | 会议 | 软件工程/系统软件/程序设计语言         |
 | A类  | ACM SIGSOFT Symposium on the Foundation of Software Engineering/ European Software Engineering Conference | FSE/ESEC        | 会议 | 软件工程/系统软件/程序设计语言         |
-| A类  | ACM Symposium on Operating Systems Principles                | SOSP            | 会议 | 软件工程/系统软件/程序设计语言         |
+| A类  |        ACM Symposium on Operating Systems Principles         | SOSP            | 会议 | 软件工程/系统软件/程序设计语言         |
 | A类  | Conference on Object-Oriented Programming Systems, Languages, and Applications | OOPSLA          | 会议 | 软件工程/系统软件/程序设计语言         |
-| A类  | International Conference on Automated Software Engineering   | ASE             | 会议 | 软件工程/系统软件/程序设计语言         |
-| A类  | International Conference on Software Engineering             | ICSE            | 会议 | 软件工程/系统软件/程序设计语言         |
-| A类  | International Symposium on Software Testing and Analysis     | ISSTA           | 会议 | 软件工程/系统软件/程序设计语言         |
+| A类  |  International Conference on Automated Software Engineering  | ASE             | 会议 | 软件工程/系统软件/程序设计语言         |
+| A类  |       International Conference on Software Engineering       | ICSE            | 会议 | 软件工程/系统软件/程序设计语言         |
+| A类  |   International Symposium on Software Testing and Analysis   | ISSTA           | 会议 | 软件工程/系统软件/程序设计语言         |
 | A类  | USENIX Symposium on Operating Systems Design and Implementations | OSDI            | 会议 | 软件工程/系统软件/程序设计语言         |
-| A类  | ACM Transactions on Database Systems                         | TODS            | 期刊 | 数据库/数据挖掘/内容检索               |
-| A类  | ACM Transactions on Information Systems                      | TOIS            | 期刊 | 数据库/数据挖掘/内容检索               |
-| A类  | IEEE Transactions on Knowledge and Data Engineering          | TKDE            | 期刊 | 数据库/数据挖掘/内容检索               |
-| A类  | The VLDB Journal                                             | VLDBJ           | 期刊 | 数据库/数据挖掘/内容检索               |
-| A类  | ACM Conference on Management of Data                         | SIGMOD          | 会议 | 数据库/数据挖掘/内容检索               |
-| A类  | ACM Knowledge Discovery and Data Mining                      | SIGKDD          | 会议 | 数据库/数据挖掘/内容检索               |
-| A类  | IEEE International Conference on Data Engineering            | ICDE            | 会议 | 数据库/数据挖掘/内容检索               |
+| A类  |             ACM Transactions on Database Systems             | TODS            | 期刊 | 数据库/数据挖掘/内容检索               |
+| A类  |           ACM Transactions on Information Systems            | TOIS            | 期刊 | 数据库/数据挖掘/内容检索               |
+| A类  |     IEEE Transactions on Knowledge and Data Engineering      | TKDE            | 期刊 | 数据库/数据挖掘/内容检索               |
+| A类  |                       The VLDB Journal                       | VLDBJ           | 期刊 | 数据库/数据挖掘/内容检索               |
+| A类  |             ACM Conference on Management of Data             | SIGMOD          | 会议 | 数据库/数据挖掘/内容检索               |
+| A类  |           ACM Knowledge Discovery and Data Mining            | SIGKDD          | 会议 | 数据库/数据挖掘/内容检索               |
+| A类  |      IEEE International Conference on Data Engineering       | ICDE            | 会议 | 数据库/数据挖掘/内容检索               |
 | A类  | International Conference on Research on Development in Information Retrieval | SIGIR           | 会议 | 数据库/数据挖掘/内容检索               |
-| A类  | International Conference on Very Large Data Bases            | VLDB            | 会议 | 数据库/数据挖掘/内容检索               |
-| A类  | IEEE Transactions on Information Theory                      | TIT             | 期刊 | 计算机科学理论                         |
-| A类  | Information and Computation                                  | IANDC           | 期刊 | 计算机科学理论                         |
-| A类  | SIAM Journal on Computing                                    | SICOMP          | 期刊 | 计算机科学理论                         |
-| A类  | ACM Symposium on the Theory of Computing                     | STOC            | 会议 | 计算机科学理论                         |
-| A类  | ACM-SIAM Symposium on Discrete Algorithms                    | SODA            | 会议 | 计算机科学理论                         |
-| A类  | Computer Aided Verification                                  | CAV             | 会议 | 计算机科学理论                         |
-| A类  | IEEE Annual Symposium on Foundations of Computer Science     | FOCS            | 会议 | 计算机科学理论                         |
-| A类  | IEEE Symposium on Logic in Computer Science                  | LICS            | 会议 | 计算机科学理论                         |
-| A类  | ACM Transactions on Graphics                                 | TOG             | 期刊 | 计算机图形学与多媒体                   |
-| A类  | IEEE Transactions on Image Processing                        | TIP             | 期刊 | 计算机图形学与多媒体                   |
-| A类  | IEEE Transactions on Visualization and Computer Graphics     | TVCG            | 期刊 | 计算机图形学与多媒体                   |
-| A类  | ACM International Conference on Multimedia                   | ACM MM          | 会议 | 计算机图形学与多媒体                   |
-| A类  | ACM SIGGRAPH Annual Conference                               | SIGGRAPH        | 会议 | 计算机图形学与多媒体                   |
-| A类  | IEEE Virtual Reality                                         | VR              | 会议 | 计算机图形学与多媒体                   |
-| A类  | IEEE Visualization Conference                                | IEEE VIS        | 会议 | 计算机图形学与多媒体                   |
-| A类  | Artificial Intelligence                                      | AI              | 期刊 | 人工智能                               |
-| A类  | IEEE Trans on Pattern Analysis and Machine Intelligence      | TPAMI           | 期刊 | 人工智能                               |
-| A类  | International Journal of Computer Vision                     | IJCV            | 期刊 | 人工智能                               |
-| A类  | Journal of Machine Learning Research                         | JMLR            | 期刊 | 人工智能                               |
-| A类  | AAAI Conference on Artificial Intelligence                   | AAAI            | 会议 | 人工智能                               |
-| A类  | Annual Conference on Neural Information Processing Systems   | NeurIPS         | 会议 | 人工智能                               |
+| A类  |      International Conference on Very Large Data Bases       | VLDB            | 会议 | 数据库/数据挖掘/内容检索               |
+| A类  |           IEEE Transactions on Information Theory            | TIT             | 期刊 | 计算机科学理论                         |
+| A类  |                 Information and Computation                  | IANDC           | 期刊 | 计算机科学理论                         |
+| A类  |                  SIAM Journal on Computing                   | SICOMP          | 期刊 | 计算机科学理论                         |
+| A类  |           ACM Symposium on the Theory of Computing           | STOC            | 会议 | 计算机科学理论                         |
+| A类  |          ACM-SIAM Symposium on Discrete Algorithms           | SODA            | 会议 | 计算机科学理论                         |
+| A类  |                 Computer Aided Verification                  | CAV             | 会议 | 计算机科学理论                         |
+| A类  |   IEEE Annual Symposium on Foundations of Computer Science   | FOCS            | 会议 | 计算机科学理论                         |
+| A类  |         IEEE Symposium on Logic in Computer Science          | LICS            | 会议 | 计算机科学理论                         |
+| A类  |                 ACM Transactions on Graphics                 | TOG             | 期刊 | 计算机图形学与多媒体                   |
+| A类  |            IEEE Transactions on Image Processing             | TIP             | 期刊 | 计算机图形学与多媒体                   |
+| A类  |   IEEE Transactions on Visualization and Computer Graphics   | TVCG            | 期刊 | 计算机图形学与多媒体                   |
+| A类  |          ACM International Conference on Multimedia          | ACM MM          | 会议 | 计算机图形学与多媒体                   |
+| A类  |                ACM SIGGRAPH Annual Conference                | SIGGRAPH        | 会议 | 计算机图形学与多媒体                   |
+| A类  |                     IEEE Virtual Reality                     | VR              | 会议 | 计算机图形学与多媒体                   |
+| A类  |                IEEE Visualization Conference                 | IEEE VIS        | 会议 | 计算机图形学与多媒体                   |
+| A类  |                   Artificial Intelligence                    | AI              | 期刊 | 人工智能                               |
+| A类  |   IEEE Trans on Pattern Analysis and Machine Intelligence    | TPAMI           | 期刊 | 人工智能                               |
+| A类  |           International Journal of Computer Vision           | IJCV            | 期刊 | 人工智能                               |
+| A类  |             Journal of Machine Learning Research             | JMLR            | 期刊 | 人工智能                               |
+| A类  |          AAAI Conference on Artificial Intelligence          | AAAI            | 会议 | 人工智能                               |
+| A类  |  Annual Conference on Neural Information Processing Systems  | NeurIPS         | 会议 | 人工智能                               |
 | A类  | Annual Meeting of the Association for Computational Linguistics | ACL             | 会议 | 人工智能                               |
-| A类  | IEEE Conference on Computer Vision and Pattern Recognition   | CVPR            | 会议 | 人工智能                               |
-| A类  | International Conference on Computer Vision                  | ICCV            | 会议 | 人工智能                               |
-| A类  | International Conference on Machine Learning                 | ICML            | 会议 | 人工智能                               |
-| A类  | International Joint Conference on Artificial Intelligence    | IJCAI           | 会议 | 人工智能                               |
-| A类  | ACM Transactions on Computer-Human Interaction               | TOCHI           | 期刊 | 人机交互与普适计算                     |
-| A类  | International Journal of Human Computer Studies              | IJHCS           | 期刊 | 人机交互与普适计算                     |
+| A类  |  IEEE Conference on Computer Vision and Pattern Recognition  | CVPR            | 会议 | 人工智能                               |
+| A类  |         International Conference on Computer Vision          | ICCV            | 会议 | 人工智能                               |
+| A类  |         International Conference on Machine Learning         | ICML            | 会议 | 人工智能                               |
+| A类  |  International Joint Conference on Artificial Intelligence   | IJCAI           | 会议 | 人工智能                               |
+| A类  |        ACM Transactions on Computer-Human Interaction        | TOCHI           | 期刊 | 人机交互与普适计算                     |
+| A类  |       International Journal of Human Computer Studies        | IJHCS           | 期刊 | 人机交互与普适计算                     |
 | A类  | ACM Conference on Computer Supported Cooperative Work and Social Computing | CSCW            | 会议 | 人机交互与普适计算                     |
-| A类  | ACM Conference on Human Factors in Computing Systems         | CHI             | 会议 | 人机交互与普适计算                     |
-| A类  | ACM International Conference on Ubiquitous Computing         | UbiComp         | 会议 | 人机交互与普适计算                     |
-| A类  | Journal of the ACM                                           | JACM            | 期刊 | 交叉/综合/新兴                         |
-| A类  | Proceedings of the IEEE                                      | Proc. IEEE      | 期刊 | 交叉/综合/新兴                         |
-| A类  | International World Wide Web Conferences                     | WWW             | 会议 | 交叉/综合/新兴                         |
-| A类  | Real-Time Systems Symposium                                  | RTSS            | 会议 | 交叉/综合/新兴                         |
+| A类  |     ACM Conference on Human Factors in Computing Systems     | CHI             | 会议 | 人机交互与普适计算                     |
+| A类  |     ACM International Conference on Ubiquitous Computing     | UbiComp         | 会议 | 人机交互与普适计算                     |
+| A类  |                      Journal of the ACM                      | JACM            | 期刊 | 交叉/综合/新兴                         |
+| A类  |                   Proceedings of the IEEE                    | Proc. IEEE      | 期刊 | 交叉/综合/新兴                         |
+| A类  |           International World Wide Web Conferences           | WWW             | 会议 | 交叉/综合/新兴                         |
+| A类  |                 Real-Time Systems Symposium                  | RTSS            | 会议 | 交叉/综合/新兴                         |
 
 |                                                              |                 |      |
 | ------------------------------------------------------------ | --------------- | ---- |
