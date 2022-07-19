@@ -32,6 +32,11 @@ authors:
   - admin
 #  - 吳恩達
 
+links:
+  - icon: PDF
+    icon_pack: fab
+    name: PDF
+    url: post/命令与环境配置/Linux命令笔记.pdf
 tags:
   - 命令
   - 开源

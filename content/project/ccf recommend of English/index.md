@@ -2,8 +2,8 @@
 title: CCF推荐英文期刊会议
 summary: 2019年CCF推荐的期刊会议.
 tags:
-  - Deep Learning
-date: '2022-06-13T00:00:00Z'
+  - Journal Conference
+date: '2022-07-19'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
@@ -18,7 +18,7 @@ links:
     name: Follow
     url: https://github.com/Zhang-maozhen
 url_code: ''
-url_pdf: content/project/CCF推荐/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf
+url_pdf: project/CCF推荐/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf
 url_slides: ''
 url_video: ''
 
@@ -28,8 +28,12 @@ url_video: ''
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: ''
+slides: 
 ---
+
+# CCF学会
+
+[CCF学会地址](https://www.ccf.org.cn/)
 
 # 会议
 
