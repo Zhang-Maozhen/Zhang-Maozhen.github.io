@@ -19,7 +19,7 @@ links:
     name: Follow
     url: https://github.com/Zhang-maozhen
 url_code: ''
-url_pdf: project/CCF推荐/计算领域高质量科技期刊分级目录.pdf
+url_pdf: project/ccf recommend of Chinese/计算领域高质量科技期刊分级目录.pdf
 url_slides: ''
 url_video: ''
 
