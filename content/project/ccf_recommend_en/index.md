@@ -18,7 +18,7 @@ links:
     name: Follow
     url: https://github.com/Zhang-maozhen
 url_code: ''
-url_pdf: project/ccf_recommend_of_English/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf
+url_pdf: project/ccf_recommend_en/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf
 url_slides: ''
 url_video: ''
 
