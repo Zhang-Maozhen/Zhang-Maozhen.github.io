@@ -8,8 +8,22 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
   
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
 
   
   
@@ -106,41 +120,10 @@
     
     
     
-      
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
-      
-    
-
-    
-    
-    
 
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -255,8 +238,23 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
 
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
   
 
 
@@ -277,11 +275,14 @@
   
 
   
+  
 
+  
   
     <link rel="manifest" href="/manifest.webmanifest" />
   
 
+  
   <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
 
@@ -379,13 +380,24 @@
 
   
 
+
+  <title>命令与环境配置 | Academic</title>
+
+  
+  
+  
   
 
 
 
 
 
-  <title>命令与环境配置 | Academic</title>
+
+
+
+
+
+
 </head>
 
 
@@ -400,7 +412,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
 
   
 
@@ -947,16 +959,16 @@
 </span></span></code></pre></div><p>删除环境</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">conda remove -n envs_name --all
 </span></span></code></pre></div><p>克隆环境</p>
-<pre tabindex="0"><code>conda create -n new_env1 new_env
-</code></pre><p>环境切换</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">conda create -n new_env1 new_env
+</span></span></code></pre></div><p>环境切换</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="c1"># 切换到新环境</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># linux/Mac下需要使用source activate env_name</span>
 </span></span><span class="line"><span class="cl">conda activate env_name
 </span></span><span class="line"><span class="cl"><span class="c1">#退出环境，也可以使用`activate root`切回root环境</span>
 </span></span><span class="line"><span class="cl">conda deactivate env_name
 </span></span></code></pre></div><p>查看当前环境的所有包</p>
-<pre tabindex="0"><code>conda list
-</code></pre><h4 id="镜像">镜像</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">conda list
+</span></span></code></pre></div><h4 id="镜像">镜像</h4>
 <p>镜像源</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">conda config --show
 </span></span></code></pre></div><p>查看配置项<code>channels</code>，如果显示带有<code>tsinghua</code>,则说明已经安装过清华镜像</p>
@@ -1019,44 +1031,44 @@
 <p>本地Git仓库和GitHub仓库之间通过SSH加密传输的，GitHub需要识别是否是你的推送，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送，所以需要配置SSh Key</p>
 <p>产生的密码在用户主目录下，id_rsa和id_rsa.pub两个目录</p>
 </blockquote>
-<pre tabindex="0"><code class="language-git" data-lang="git">ssh-keygen -t rsa -C&#34;1209173759@qq.com&#34;
-</code></pre><ol start="2">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ssh-keygen -t rsa -C&#34;1209173759@qq.com&#34;
+</span></span></code></pre></div><ol start="2">
 <li>登录github上，在<code>SSH and GPG keys</code>页面Add SSH Key粘贴id_rsa.pub文件里的全部内容</li>
 <li>检验是否添加成功，在git bash里面输入</li>
 </ol>
-<pre tabindex="0"><code class="language-git" data-lang="git">ssh -T git@github.com
-</code></pre><ol start="4">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ssh -T git@github.com
+</span></span></code></pre></div><ol start="4">
 <li>设置username和email，github每次commit都会记录该信息（分别是哪个用户进行的上传）</li>
 </ol>
-<pre tabindex="0"><code class="language-git" data-lang="git">git config --global user.name &#34;name&#34;//github登录名，上传信息的名字
-git config --global user.email &#34;email&#34;//你的github注册邮箱
-</code></pre><ol start="5">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global user.name &#34;name&#34;//github登录名，上传信息的名字
+</span></span><span class="line"><span class="cl">git config --global user.email &#34;email&#34;//你的github注册邮箱
+</span></span></code></pre></div><ol start="5">
 <li>把本地仓库传到github上/把远程仓库下载到本地</li>
 </ol>
-<pre tabindex="0"><code>//本地仓库传到github上
-git remote add origin git@github.com:Zhang-Maozen/仓库名.git
-git push -u origin master
-
-//远程仓库下载到本地
-git clone HTTPS //HTTPS是github上的连接地址 //会将连接下载到本地仓库，作为一个项目文件
-cd projectName
-</code></pre><h2 id="git操作">Git操作</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//本地仓库传到github上
+</span></span><span class="line"><span class="cl">git remote add origin git@github.com:Zhang-Maozen/仓库名.git
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//远程仓库下载到本地
+</span></span><span class="line"><span class="cl">git clone HTTPS //HTTPS是github上的连接地址 //会将连接下载到本地仓库，作为一个项目文件
+</span></span><span class="line"><span class="cl">cd projectName
+</span></span></code></pre></div><h2 id="git操作">Git操作</h2>
 <h3 id="git上传文件到远程仓库">Git上传文件到远程仓库</h3>
-<pre tabindex="0"><code class="language-git" data-lang="git">//起名为origin
-git remote add origin https://gitee.com/Danerszz/my-note.git
-</code></pre><h3 id="查看状态">查看状态</h3>
-<pre tabindex="0"><code>git remote 
-git remote -v
-</code></pre><p>可以查看到别名， 一般默认为origin</p>
-<pre tabindex="0"><code>git remote show origin 显示详细信息
-git remote rm origin 删除此别名的长裤设置
-git remote add 仓库别名 Url
-</code></pre><h3 id="删除连接">删除连接</h3>
-<pre tabindex="0"><code>git remote rm origin
-</code></pre><h3 id="添加连接">添加连接</h3>
-<pre tabindex="0"><code>//本地仓库传到github上
-git remote add origin git@github.com:Zhang-Maozen/仓库名.git
-</code></pre><h3 id="分支">分支</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//起名为origin
+</span></span><span class="line"><span class="cl">git remote add origin https://gitee.com/Danerszz/my-note.git
+</span></span></code></pre></div><h3 id="查看状态">查看状态</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote 
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span></code></pre></div><p>可以查看到别名， 一般默认为origin</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote show origin 显示详细信息
+</span></span><span class="line"><span class="cl">git remote rm origin 删除此别名的长裤设置
+</span></span><span class="line"><span class="cl">git remote add 仓库别名 Url
+</span></span></code></pre></div><h3 id="删除连接">删除连接</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote rm origin
+</span></span></code></pre></div><h3 id="添加连接">添加连接</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//本地仓库传到github上
+</span></span><span class="line"><span class="cl">git remote add origin git@github.com:Zhang-Maozen/仓库名.git
+</span></span></code></pre></div><h3 id="分支">分支</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#查看分支</span>
 </span></span><span class="line"><span class="cl">git branch
 </span></span><span class="line"><span class="cl"><span class="c1">#创建分支</span>
@@ -1077,24 +1089,24 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
 <h4 id="撤销commit同时保留git-add">撤销commit，同时保留git add</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">^</span>
 </span></span></code></pre></div><h4 id="删除工作空间改动的代码撤销commit并且撤销git-add">删除工作空间改动的代码，撤销commit，并且撤销git add</h4>
-<pre tabindex="0"><code>git reset --hard HEAD^
-</code></pre><h4 id="修改git-commit注释内容">修改git commit注释内容</h4>
-<pre tabindex="0"><code>git commit --amend
-</code></pre><h4 id="还没git--commit-只撤销git-add此时会保留本地修改绿字变红字">还没git  commit ,只撤销git add,此时会保留本地修改（绿字变红字）</h4>
-<pre tabindex="0"><code>git reset HEAD filename
-</code></pre><h2 id="错误">错误</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git reset --hard HEAD^
+</span></span></code></pre></div><h4 id="修改git-commit注释内容">修改git commit注释内容</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git commit --amend
+</span></span></code></pre></div><h4 id="还没git--commit-只撤销git-add此时会保留本地修改绿字变红字">还没git  commit ,只撤销git add,此时会保留本地修改（绿字变红字）</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git reset HEAD filename
+</span></span></code></pre></div><h2 id="错误">错误</h2>
 <h4 id="fatal-refusing-to-merge-unrelated-histories">fatal: refusing to merge unrelated histories</h4>
 <p>本地仓库在想做同步远程仓库到本地为之后本地仓库推送到远程仓库做准备时报错了，错误如下：</p>
 <p><code>fatal: refusing to merge unrelated histories</code></p>
 <p>解决：出现这个问题的最主要原因还是在于本地仓库和远程仓库实际上是独立的两个仓库。假如我之前是直接clone的方式在本地建立起远程github仓库的克隆本地仓库就不会有这问题了。</p>
 <p>查阅了一下资料，发现可以在pull命令后紧接着使用<code>--allow-unrelated-history</code>选项来解决问题（该选项可以合并两个独立启动仓库的历史）。</p>
-<pre tabindex="0"><code>$git pull origin master --allow-unrelated-histories
-</code></pre><h4 id="openssl-ssl_connect-connection-was-reset-in-connection-to-githubcom443">OpenSSL SSL_connect: Connection was reset in connection to github.com:443</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$git pull origin master --allow-unrelated-histories
+</span></span></code></pre></div><h4 id="openssl-ssl_connect-connection-was-reset-in-connection-to-githubcom443">OpenSSL SSL_connect: Connection was reset in connection to github.com:443</h4>
 <p>查看全局配置：</p>
-<pre tabindex="0"><code>git config --global -l
-</code></pre><p>已有设置情况修改代理项：</p>
-<pre tabindex="0"><code>git config --global --unset http.proxy 
-</code></pre><p>如果使用过VPN或者代理，关机时未关，通过cmd下命令行ipconfig/flushdns清理dns缓存</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global -l
+</span></span></code></pre></div><p>已有设置情况修改代理项：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global --unset http.proxy 
+</span></span></code></pre></div><p>如果使用过VPN或者代理，关机时未关，通过cmd下命令行ipconfig/flushdns清理dns缓存</p>
 <h2 id="个人主页与git操作">个人主页与GIt操作</h2>
 <h3 id="发布到master">发布到master</h3>
 <p>仓库中创建<code>\docs</code>，将生成的静态网页放入，在仓库<code>setting</code>页面选择<code>pages</code>，选择生成原路径<code>docs</code></p>
@@ -1219,6 +1231,7 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
     </div>
 
     
+
 
 
 
@@ -1440,6 +1453,15 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
 
 
 
+
+
+
+
+
+
+
+
+
   
 
   
@@ -1509,111 +1531,101 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
     
   </div>
 
-      
+  
 
-    
-    <script src="/js/vendor-bundle.min.46271ef31da3f018e9cd1b59300aa265.js"></script>
 
-    
-    
-    
-      
+<script src="/js/vendor-bundle.min.46271ef31da3f018e9cd1b59300aa265.js"></script>
 
-      
-      
 
-      
 
-      
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
-        
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
-        
-      
 
-    
+  
 
-    
-    
-    
+  
+  
 
-    
-    
+  
 
-    
-    
-    
-      
-      <script id="search-hit-fuse-template" type="text/x-template">
-        <div class="search-hit" id="summary-{{key}}">
-          <div class="search-hit-content">
-            <div class="search-hit-name">
-              <a href="{{relpermalink}}">{{title}}</a>
-              <div class="article-metadata search-hit-type">{{type}}</div>
-              <p class="search-hit-description">{{snippet}}</p>
-            </div>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
         </div>
-      </script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
-      
-    
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
 
-    
-    
 
-    
-    
-    
-    
 
-    
-    
-      
-      
-      
-      
-      
-      
-      
-    
 
-    
 
-    
-    
-    
-    <script id="page-data" type="application/json">{"use_headroom":true}</script>
 
-    
-    
-      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
-    
-    
-    
-    
-    
-    
-    
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.3239609ca7abe02ed52d76ffcb22af1d.js"></script>
 
-    
-    
-    
-    
-    
-    
-      
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.a6238d5886fa4a2f7cf92df25709326f.js"></script>
+
+
+
+
+
+
+
+  
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -1624,7 +1636,8 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
         </button>
       </div>
       <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
+        
+        <pre><code></code></pre>
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
@@ -1639,7 +1652,18 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
   </div>
 </div>
 
-      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
 
 
 

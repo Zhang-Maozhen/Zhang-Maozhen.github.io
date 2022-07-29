@@ -228,8 +228,8 @@
 &lt;p&gt;默认的页码编码方式是&lt;a href=&#34;https://www.zhihu.com/search?q=%e9%98%bf%e6%8b%89%e4%bc%af%e6%95%b0%e5%ad%97&amp;amp;search_source=Entity&amp;amp;hybrid_search_source=Entity&amp;amp;hybrid_search_extra=%7b%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22456055339%22%7d&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿拉伯数字&lt;/a&gt;，用户也可以自己设置为小写罗马数字：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;roman&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，&lt;code&gt;aiph&lt;/code&gt;表示小写字母，&lt;code&gt;Aiph&lt;/code&gt;表示大写字母，&lt;code&gt;Roman&lt;/code&gt;表示大写罗马数字，&lt;code&gt;arabic&lt;/code&gt;表示默认的阿拉伯数字。如果要设置页码的话，可以用如下代码来设置页码从0开始：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\setcounter{page}{0}
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;latex数学公式&#34;&gt;Latex数学公式&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;\setcounter{page}{0}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;latex数学公式&#34;&gt;Latex数学公式&lt;/h1&gt;
 &lt;h2 id=&#34;字体&#34;&gt;字体&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1014,10 +1014,10 @@ y=\left{
 \end{matrix}
 \right.
 $$&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;to apply an operation along a dimension,We can use the Tensor.view() function to reshape tensors similarly to numpy.reshape()
-
-It can also automatically calculate the correct dimension if a -1 is passed in. This is useful if we are working with batches, but the batch size is unknown.
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;to apply an operation along a dimension,We can use the Tensor.view() function to reshape tensors similarly to numpy.reshape()
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;It can also automatically calculate the correct dimension if a -1 is passed in. This is useful if we are working with batches, but the batch size is unknown.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

@@ -33,6 +33,60 @@
     </item>
     
     <item>
+      <title>联邦学习 概念</title>
+      <link>https://Zhang-maozhen.github.io/post/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0_%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://Zhang-maozhen.github.io/post/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0_%E6%A6%82%E5%BF%B5/</guid>
+      <description>&lt;h1 id=&#34;联邦学习--概念&#34;&gt;联邦学习  概念&lt;/h1&gt;
+&lt;p&gt;传统的联邦学习的目标函数可写为：
+$$
+f(w)=\sum_{k=1}^K\frac{n_k}{n}F_k(w)\
+F_k(w)=\frac{1}{n_k}\sum_{i=1}^{n_k}l(h(x_i;w),y_i)
+$$
+$K$为总结点个数，$n_k$为第$k$个节点的样本数。&lt;/p&gt;
+&lt;p&gt;联邦学习训练过程中，会将数据按照Non-IID划分到各client节点，然后在各client节点的数据划分train/test/val。对于传统联邦学习而言，每个client都会使用全局模型$w$进行测试。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在IID条件下，在分布式优化中常假定$f(w)=\mathbb E_{D_k}[F_k(w)]$，其中$D_k$为第$k$个节点的数据集，此时就退化为传统的分布式机器学习。然而在数据Non-IID条件下，$F_k$就不是一个对$f$的良好近似，这意味着想训练一个模型$w$满足所有节点的要求难度很大&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;font color=&#34;#ED526&#34;&gt;【醒悟】：这就是联邦学习个性化么呀！&lt;/font&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;联邦学习个性化不求构建全局通用的模型$w$，而是为每个节点分别创建一个个性化的模型$w_k$&lt;/p&gt;
+&lt;p&gt;个性化常见方法有：元学习、多任务学习、迁移学习&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;主要划分有：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;横向联邦学习、纵向联邦学习、迁移联邦学习&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最初是由谷歌的H.Brendan McMahan等人提出，并将其应用落地&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;横向联邦学习&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;适用于特征重合多，样本重合较少的数据集进行联合计算的场景。以样本维度（横向）对数据集进行切分，以特征相同而样本不完全相同的数据部分为对象进行训练。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;谷歌在 2016 年提出的安卓手机模型更新数据联合建模方案就是利 用单个用户使用安卓手机时，不断在本地更新模型参 数并上传到安卓云上，从而使特征维度相同的各数据 拥有方联合建模&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/20220704225948.png&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;strong&gt;纵向联邦学习&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;适用于样本重合较多，而特征重合较少的数据集间联合计算的场景。以特征维度（纵向）对数据集进行切分，以样本相同而特征不完全相同的数据集部分为对象进行训练&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如同一地区的银行和电商，两个机构在特定地区的用户群里交集较大，因此可以对不同维度的用户特征进行聚合以增强模型能力。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20220705095039461.png&#34; alt=&#34;image-20220705095039461&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;strong&gt;联邦迁移学习&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;适用于数据集间样本和特征重合均较少的场景。在这样的场景中，不再对数据进行切分，而是利用迁移学习来弥补数据或标签的不足。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如不同地区、不同行业机构之间进行联合建模为例，用户群体和特征维度的交集都较小，联邦迁移学习即用来针对性解决单边数据规模小，标签样本少的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20220705095641894.png&#34; alt=&#34;image-20220705095641894&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Mcmahan H B, Moore E, Ramage D, et al. Communication-Efficient Learning of Deep Networks from Decentralized Data [J]. international conference on artificial intelligence and statistics, 2016.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>深度学习评价指标</title>
       <link>https://Zhang-maozhen.github.io/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
       <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
@@ -10325,8 +10379,8 @@ $$
 &lt;p&gt;默认的页码编码方式是&lt;a href=&#34;https://www.zhihu.com/search?q=%e9%98%bf%e6%8b%89%e4%bc%af%e6%95%b0%e5%ad%97&amp;amp;search_source=Entity&amp;amp;hybrid_search_source=Entity&amp;amp;hybrid_search_extra=%7b%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22456055339%22%7d&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿拉伯数字&lt;/a&gt;，用户也可以自己设置为小写罗马数字：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tex&#34; data-lang=&#34;tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;roman&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外，&lt;code&gt;aiph&lt;/code&gt;表示小写字母，&lt;code&gt;Aiph&lt;/code&gt;表示大写字母，&lt;code&gt;Roman&lt;/code&gt;表示大写罗马数字，&lt;code&gt;arabic&lt;/code&gt;表示默认的阿拉伯数字。如果要设置页码的话，可以用如下代码来设置页码从0开始：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\setcounter{page}{0}
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;latex数学公式&#34;&gt;Latex数学公式&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;\setcounter{page}{0}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;latex数学公式&#34;&gt;Latex数学公式&lt;/h1&gt;
 &lt;h2 id=&#34;字体&#34;&gt;字体&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -11111,10 +11165,10 @@ y=\left{
 \end{matrix}
 \right.
 $$&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;to apply an operation along a dimension,We can use the Tensor.view() function to reshape tensors similarly to numpy.reshape()
-
-It can also automatically calculate the correct dimension if a -1 is passed in. This is useful if we are working with batches, but the batch size is unknown.
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;to apply an operation along a dimension,We can use the Tensor.view() function to reshape tensors similarly to numpy.reshape()
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;It can also automatically calculate the correct dimension if a -1 is passed in. This is useful if we are working with batches, but the batch size is unknown.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -11143,16 +11197,16 @@ It can also automatically calculate the correct dimension if a -1 is passed in. 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除环境&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda remove -n envs_name --all
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;克隆环境&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda create -n new_env1 new_env
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;环境切换&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda create -n new_env1 new_env
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;环境切换&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 切换到新环境&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# linux/Mac下需要使用source activate env_name&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda activate env_name
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#退出环境，也可以使用`activate root`切回root环境&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda deactivate env_name
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看当前环境的所有包&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda list
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;镜像&#34;&gt;镜像&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;镜像&#34;&gt;镜像&lt;/h4&gt;
 &lt;p&gt;镜像源&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --show
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看配置项&lt;code&gt;channels&lt;/code&gt;，如果显示带有&lt;code&gt;tsinghua&lt;/code&gt;,则说明已经安装过清华镜像&lt;/p&gt;
@@ -11215,44 +11269,44 @@ It can also automatically calculate the correct dimension if a -1 is passed in. 
 &lt;p&gt;本地Git仓库和GitHub仓库之间通过SSH加密传输的，GitHub需要识别是否是你的推送，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送，所以需要配置SSh Key&lt;/p&gt;
 &lt;p&gt;产生的密码在用户主目录下，id_rsa和id_rsa.pub两个目录&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;ssh-keygen -t rsa -C&amp;#34;1209173759@qq.com&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t rsa -C&amp;#34;1209173759@qq.com&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;登录github上，在&lt;code&gt;SSH and GPG keys&lt;/code&gt;页面Add SSH Key粘贴id_rsa.pub文件里的全部内容&lt;/li&gt;
 &lt;li&gt;检验是否添加成功，在git bash里面输入&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;ssh -T git@github.com
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh -T git@github.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;设置username和email，github每次commit都会记录该信息（分别是哪个用户进行的上传）&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;git config --global user.name &amp;#34;name&amp;#34;//github登录名，上传信息的名字
-git config --global user.email &amp;#34;email&amp;#34;//你的github注册邮箱
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global user.name &amp;#34;name&amp;#34;//github登录名，上传信息的名字
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global user.email &amp;#34;email&amp;#34;//你的github注册邮箱
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;把本地仓库传到github上/把远程仓库下载到本地&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//本地仓库传到github上
-git remote add origin git@github.com:Zhang-Maozen/仓库名.git
-git push -u origin master
-
-//远程仓库下载到本地
-git clone HTTPS //HTTPS是github上的连接地址 //会将连接下载到本地仓库，作为一个项目文件
-cd projectName
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;git操作&#34;&gt;Git操作&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//本地仓库传到github上
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin git@github.com:Zhang-Maozen/仓库名.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//远程仓库下载到本地
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone HTTPS //HTTPS是github上的连接地址 //会将连接下载到本地仓库，作为一个项目文件
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd projectName
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;git操作&#34;&gt;Git操作&lt;/h2&gt;
 &lt;h3 id=&#34;git上传文件到远程仓库&#34;&gt;Git上传文件到远程仓库&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;//起名为origin
-git remote add origin https://gitee.com/Danerszz/my-note.git
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;查看状态&#34;&gt;查看状态&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote 
-git remote -v
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以查看到别名， 一般默认为origin&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote show origin 显示详细信息
-git remote rm origin 删除此别名的长裤设置
-git remote add 仓库别名 Url
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;删除连接&#34;&gt;删除连接&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote rm origin
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加连接&#34;&gt;添加连接&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//本地仓库传到github上
-git remote add origin git@github.com:Zhang-Maozen/仓库名.git
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;分支&#34;&gt;分支&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//起名为origin
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin https://gitee.com/Danerszz/my-note.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;查看状态&#34;&gt;查看状态&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以查看到别名， 一般默认为origin&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote show origin 显示详细信息
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote rm origin 删除此别名的长裤设置
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add 仓库别名 Url
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;删除连接&#34;&gt;删除连接&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote rm origin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;添加连接&#34;&gt;添加连接&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//本地仓库传到github上
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin git@github.com:Zhang-Maozen/仓库名.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;分支&#34;&gt;分支&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#查看分支&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#创建分支&lt;/span&gt;
@@ -11273,24 +11327,24 @@ git remote add origin git@github.com:Zhang-Maozen/仓库名.git
 &lt;h4 id=&#34;撤销commit同时保留git-add&#34;&gt;撤销commit，同时保留git add&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;reset&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;soft&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HEAD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;删除工作空间改动的代码撤销commit并且撤销git-add&#34;&gt;删除工作空间改动的代码，撤销commit，并且撤销git add&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset --hard HEAD^
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;修改git-commit注释内容&#34;&gt;修改git commit注释内容&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git commit --amend
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;还没git--commit-只撤销git-add此时会保留本地修改绿字变红字&#34;&gt;还没git  commit ,只撤销git add,此时会保留本地修改（绿字变红字）&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset HEAD filename
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;错误&#34;&gt;错误&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git reset --hard HEAD^
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;修改git-commit注释内容&#34;&gt;修改git commit注释内容&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit --amend
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;还没git--commit-只撤销git-add此时会保留本地修改绿字变红字&#34;&gt;还没git  commit ,只撤销git add,此时会保留本地修改（绿字变红字）&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git reset HEAD filename
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;错误&#34;&gt;错误&lt;/h2&gt;
 &lt;h4 id=&#34;fatal-refusing-to-merge-unrelated-histories&#34;&gt;fatal: refusing to merge unrelated histories&lt;/h4&gt;
 &lt;p&gt;本地仓库在想做同步远程仓库到本地为之后本地仓库推送到远程仓库做准备时报错了，错误如下：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;解决：出现这个问题的最主要原因还是在于本地仓库和远程仓库实际上是独立的两个仓库。假如我之前是直接clone的方式在本地建立起远程github仓库的克隆本地仓库就不会有这问题了。&lt;/p&gt;
 &lt;p&gt;查阅了一下资料，发现可以在pull命令后紧接着使用&lt;code&gt;--allow-unrelated-history&lt;/code&gt;选项来解决问题（该选项可以合并两个独立启动仓库的历史）。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$git pull origin master --allow-unrelated-histories
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;openssl-ssl_connect-connection-was-reset-in-connection-to-githubcom443&#34;&gt;OpenSSL SSL_connect: Connection was reset in connection to github.com:443&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$git pull origin master --allow-unrelated-histories
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;openssl-ssl_connect-connection-was-reset-in-connection-to-githubcom443&#34;&gt;OpenSSL SSL_connect: Connection was reset in connection to github.com:443&lt;/h4&gt;
 &lt;p&gt;查看全局配置：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global -l
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;已有设置情况修改代理项：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global --unset http.proxy 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果使用过VPN或者代理，关机时未关，通过cmd下命令行ipconfig/flushdns清理dns缓存&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;已有设置情况修改代理项：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global --unset http.proxy 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果使用过VPN或者代理，关机时未关，通过cmd下命令行ipconfig/flushdns清理dns缓存&lt;/p&gt;
 &lt;h2 id=&#34;个人主页与git操作&#34;&gt;个人主页与GIt操作&lt;/h2&gt;
 &lt;h3 id=&#34;发布到master&#34;&gt;发布到master&lt;/h3&gt;
 &lt;p&gt;仓库中创建&lt;code&gt;\docs&lt;/code&gt;，将生成的静态网页放入，在仓库&lt;code&gt;setting&lt;/code&gt;页面选择&lt;code&gt;pages&lt;/code&gt;，选择生成原路径&lt;code&gt;docs&lt;/code&gt;&lt;/p&gt;
@@ -11478,10 +11532,10 @@ $$&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
 &lt;p&gt;Make content appear incrementally&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} **Two** {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{% fragment %}} One {{% /fragment %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{% fragment %}} **Two** {{% /fragment %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{% fragment %}} Three {{% /fragment %}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
 &lt;span class=&#34;fragment &#34; &gt;
   One
 &lt;/span&gt;
