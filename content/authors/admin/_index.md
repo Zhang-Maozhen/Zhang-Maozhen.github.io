@@ -19,7 +19,7 @@ bio: My research interests include deepfake detection, federatedLearning and dif
 # Interests to show in About widget
 interests:
 #  - Deepfake Detection
-  - Deep Learning
+  - Privacy Computing
   - Federated Learning
   - Differential Privacy
 
@@ -28,7 +28,7 @@ education:
   courses:
   - course: PhD
     institution: Dalian University of Technology
-    year: 2022-
+    year: 2022-今
   - course: Master in Computer Technology
     institution: Dalian Maritime University
     year: 2019-2022
@@ -71,8 +71,8 @@ email: ''
 highlight_name: true
 ---
 
-目前，我尚未入学，仍旧在博0阶段，但马上将会变成博一新生。我的指导教师是大连理工大学的王波副教授。
+我是一名博士生在读，目前博一。我的指导教师是大连理工大学的王波副教授。
 
-就现在而言，我的研究方向总体与信息安全相关，但具体的研究根据入学后的情况决定，但仍旧偏离不了机器学习、深度学习与信息安全。目前正在学习联邦学习
+我的研究方向是隐私计算，包括联邦学习，差分隐私和多方安全计算。
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
