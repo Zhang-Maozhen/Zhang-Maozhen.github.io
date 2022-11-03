@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Wowchemy 5.6.0 for Hugo">
+
+  
+    <link rel="manifest" href="/manifest.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png">
+
+  <link rel="canonical" href="https://Zhang-maozhen.github.io/slides/slidetest/slidesss/">
+
+  <title> | Academic</title>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.min.css">
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/reveal_custom.min.css">
+</head>
+<body>
+
+  
+<div class="reveal">
+  <div class="slides">
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    <section>
+    
+      <h1 id="references">References</h1>
+<p>references Introduction</p>
+<div class="pt-12">
+  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    Zzz <carbon:arrow-right class="inline"/>
+  </span>
+</div>
+<div class="abs-br m-6 flex gap-2">
+  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon:edit />
+  </button>
+  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-github />
+  </a>
+</div>
+<!--
+The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="what-is-slidev">What is Slidev?</h1>
+<p>Slidev is a slides maker and presenter designed for developers, consist of the following features</p>
+<ul>
+<li>📝 <strong>Text-based</strong> - focus on the content with Markdown, and then style them later</li>
+<li>🎨 <strong>Themable</strong> - theme can be shared and used with npm packages</li>
+<li>🧑‍💻 <strong>Developer Friendly</strong> - code highlighting, live coding with autocompletion</li>
+<li>🤹 <strong>Interactive</strong> - embedding Vue components to enhance your expressions</li>
+<li>🎥 <strong>Recording</strong> - built-in recording and camera view</li>
+<li>📤 <strong>Portable</strong> - export into PDF, PNGs, or even a hostable SPA</li>
+<li>🛠 <strong>Hackable</strong> - anything possible on a webpage</li>
+</ul>
+<br>
+<br>
+<p>Read more about <a href="https://sli.dev/guide/why" target="_blank" rel="noopener">Why Slidev?</a></p>
+<!--
+You can have `style` tag in markdown to override the style for the current page.
+Learn more: https://sli.dev/guide/syntax#embedded-styles
+-->
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+<!--
+Here is another comment.
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="navigation">Navigation</h1>
+<p>Hover on the bottom-left corner to see the navigation&rsquo;s controls panel, <a href="https://sli.dev/guide/navigation.html" target="_blank" rel="noopener">learn more</a></p>
+<h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>right</kbd> / <kbd>space</kbd></td>
+<td>next animation or slide</td>
+</tr>
+<tr>
+<td><kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd></td>
+<td>previous animation or slide</td>
+</tr>
+<tr>
+<td><kbd>up</kbd></td>
+<td>previous slide</td>
+</tr>
+<tr>
+<td><kbd>down</kbd></td>
+<td>next slide</td>
+</tr>
+</tbody>
+</table>
+<!-- https://sli.dev/guide/animations.html#click-animations -->
+<p>&lt;img
+v-click
+class=&ldquo;absolute -bottom-9 -left-7 w-80 opacity-50&rdquo;
+src=&ldquo;<a href="https://sli.dev/assets/arrow-bottom-left.svg%22" target="_blank" rel="noopener">https://sli.dev/assets/arrow-bottom-left.svg"</a>
+/&gt;</p>
+<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<p>layout: image-right</p>
+<h2 id="image-httpssourceunsplashcomcollection947345661920x1080">image: <a href="https://source.unsplash.com/collection/94734566/1920x1080" target="_blank" rel="noopener">https://source.unsplash.com/collection/94734566/1920x1080</a></h2>
+<h1 id="code">Code</h1>
+<p>Use code snippets and get the highlighting directly!<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">firstName</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">lastName</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">role</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">update</span>: <span class="kt">User</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">getUser</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">newUser</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">user</span><span class="p">,</span> <span class="p">...</span><span class="nx">update</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">saveUser</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">newUser</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+<style>
+.footnotes-sep {
+  @apply mt-20 opacity-10;
+}
+.footnotes {
+  @apply text-sm opacity-75;
+}
+.footnote-backref {
+  display: none;
+}
+</style>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="components">Components</h1>
+<div grid="~ cols-2 gap-4">
+<div>
+<p>You can use Vue components directly inside your slides.</p>
+<p>We have provided a few built-in components like <code>&lt;Tweet/&gt;</code> and <code>&lt;Youtube/&gt;</code> that you can use directly. And adding your custom components is also super easy.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Counter</span> <span class="na">:count</span><span class="o">=</span><span class="s">&#34;10&#34;</span> <span class="p">/&gt;</span>
+</span></span></code></pre></div><!-- ./components/Counter.vue -->
+<Counter :count="10" m="t-4" />
+<p>Check out <a href="https://sli.dev/builtin/components.html" target="_blank" rel="noopener">the guides</a> for more.</p>
+</div>
+<div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Tweet</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;1390115482657726468&#34;</span> <span class="p">/&gt;</span>
+</span></span></code></pre></div><Tweet id="1390115482657726468" scale="0.65" />
+</div>
+</div>
+<!--
+Presenter note with **bold**, *italic*, and ~~striked~~ text.
+
+Also, HTML elements are valid:
+<div class="flex w-full">
+  <span style="flex-grow: 1;">Left content</span>
+  <span>Right content</span>
+</div>
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="class-px-20">class: px-20</h2>
+<h1 id="themes">Themes</h1>
+<p>两个免费文献管理软件推荐，实现文献信息同步、文献抓取、阅读标注、翻译和文献标签等基本功能</p>
+<div grid="~ cols-2 gap-2" m="-t-2">
+<p>Zootero：https://www.zotero.org/</p>
+<p>Mendeley：https://www.mendeley.com/</p>
+<blockquote>
+<p>Zotero 强大而灵活，不太好驾驭</p>
+<p>需要安装各种拓展插件</p>
+</blockquote>
+<blockquote>
+<p>Mendeley 基本够用，但不够强大。</p>
+<p>安装即可用</p>
+</blockquote>
+<img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20221030191637024.png" alt="image-20221030191637024" style="zoom:70%;" />
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20221030191444021.png" alt="image-20221030191444021" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+</div>
+<p>知乎对于两款软件优劣对比的话题：<a href="http://www-quic.zhihu.com/question/292241691/answer/2204622823" target="_blank" rel="noopener">如何对比 Zotero 和 Mendeley 两款文献管理的优劣?</a></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="preload-false">preload: false</h2>
+<h1 id="animations">Animations</h1>
+<p>Animations are powered by <a href="https://motion.vueuse.org/" target="_blank" rel="noopener">@vueuse/motion</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span>
+</span></span><span class="line"><span class="cl">  <span class="na">v-motion</span>
+</span></span><span class="line"><span class="cl">  <span class="na">:initial</span><span class="o">=</span><span class="s">&#34;{ x: -80 }&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">:enter</span><span class="o">=</span><span class="s">&#34;{ x: 0 }&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  Slidev
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><div class="w-60 relative mt-6">
+  <div class="relative w-40 h-40">
+    <img
+      v-motion
+      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-square.png"
+    />
+    <img
+      v-motion
+      :initial="{ y: 500, x: -100, scale: 2 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-circle.png"
+    />
+    <img
+      v-motion
+      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-triangle.png"
+    />
+  </div>
+  <div
+    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
+    v-motion
+    :initial="{ x: -80, opacity: 0}"
+    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
+    Slidev
+  </div>
+</div>
+<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
+<script setup lang="ts">
+const final = {
+  x: 0,
+  y: 0,
+  rotate: 0,
+  scale: 1,
+  transition: {
+    type: 'spring',
+    damping: 10,
+    stiffness: 20,
+    mass: 2
+  }
+}
+</script>
+<div
+  v-motion
+  :initial="{ x:35, y: 40, opacity: 0}"
+  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+<p><a href="https://sli.dev/guide/animations.html#motion" target="_blank" rel="noopener">Learn More</a></p>
+</div>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="latex">LaTeX</h1>
+<p>LaTeX is supported out-of-box powered by <a href="https://katex.org/" target="_blank" rel="noopener">KaTeX</a>.</p>
+<br>
+<p>Inline $\sqrt{3x-1}+(1+x)^2$</p>
+<p>Block
+$$
+\begin{array}{c}</p>
+<p>\nabla \times \vec{\mathbf{B}} -, \frac1c, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;
+= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \</p>
+<p>\nabla \times \vec{\mathbf{E}}, +, \frac1c, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \</p>
+<p>\nabla \cdot \vec{\mathbf{B}} &amp; = 0</p>
+<p>\end{array}
+$$</p>
+<br>
+<p><a href="https://sli.dev/guide/syntax#latex" target="_blank" rel="noopener">Learn more</a></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="diagrams">Diagrams</h1>
+<p>You can create diagrams / graphs from textual descriptions, directly in your Markdown.</p>
+<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
+<div class="mermaid">sequenceDiagram
+    Alice->John: Hello John, how are you?
+    Note over Alice,John: A typical interaction
+</div>
+<div class="mermaid">graph TD
+B[Text] --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="err">@</span><span class="nx">startuml</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="s">&#34;Some Group&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">HTTP</span> <span class="o">-</span> <span class="p">[</span><span class="nx">First</span> <span class="nx">Component</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">Another</span> <span class="nx">Component</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">node</span> <span class="s">&#34;Other Groups&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">FTP</span> <span class="o">-</span> <span class="p">[</span><span class="nx">Second</span> <span class="nx">Component</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">First</span> <span class="nx">Component</span><span class="p">]</span> <span class="o">--</span><span class="p">&gt;</span> <span class="nx">FTP</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">cloud</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">Example</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">database</span> <span class="s">&#34;MySql&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">folder</span> <span class="s">&#34;This is my folder&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">Folder</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">frame</span> <span class="s">&#34;Foo&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">Frame</span> <span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Another</span> <span class="nx">Component</span><span class="p">]</span> <span class="o">--</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">Example</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Example</span> <span class="mi">1</span><span class="p">]</span> <span class="o">--</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">Folder</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Folder</span> <span class="mi">3</span><span class="p">]</span> <span class="o">--</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">Frame</span> <span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">@</span><span class="nx">enduml</span>
+</span></span></code></pre></div></div>
+<p><a href="https://sli.dev/guide/syntax.html#diagrams" target="_blank" rel="noopener">Learn More</a></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="hide-false">src: ./pages/multiple-entries.md
+hide: false</h2>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="class-text-center">layout: center
+class: text-center</h2>
+<h1 id="learn-more">Learn More</h1>
+<p><a href="https://sli.dev" target="_blank" rel="noopener">Documentations</a> · <a href="https://github.com/slidevjs/slidev" target="_blank" rel="noopener">GitHub</a> · <a href="https://sli.dev/showcases.html" target="_blank" rel="noopener">Showcases</a></p>
+<div class="footnotes" role="doc-endnotes">
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<ol>
+<li id="fn:1">
+<p><a href="https://sli.dev/guide/syntax.html#line-highlighting" target="_blank" rel="noopener">Learn More</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </section>
+    
+
+    
+    
+  </div>
+</div>
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/search/search.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.min.js" crossorigin="anonymous"></script>
+
+  
+  
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/plugin.js" integrity="sha256-M6JwAjnRAWmi+sbXURR/yAhWZKYhAw7YXnnLvIxrdGs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js" integrity="sha256-l14dklFcW5mWar6w/9KaW0fWVerf3mYr7Wt0+rXzFAA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css" integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin="anonymous">
+  
+
+  
+  
+
+  
+  
+  <script src="/js/wowchemy-slides.js"></script>
+
+</body>
+</html>
