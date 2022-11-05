@@ -49,7 +49,7 @@ url_video: ''
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: test
+slides: Reference-Introduction
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -57,7 +57,7 @@ slides: test
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects:
-  - example
+  - Reference-Introduction
 ---
 
 {{% callout note %}}

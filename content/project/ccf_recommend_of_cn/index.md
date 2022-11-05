@@ -2,8 +2,7 @@
 title: CCF推荐中文期刊会议
 summary: 2019年CCF推荐的期刊会议.
 tags:
-   - 
-#  - Journal Conference
+  - Journal Conference
 date: '2022-07-19'
 
 # Optional external URL for project (replaces project detail page).
