@@ -1,0 +1,1515 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Zhang Maozhen" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="记录DH秘密分享方法的了解." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://Zhang-maozhen.github.io/post/secreteshare/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://Zhang-maozhen.github.io/post/secreteshare/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@wowchemy" />
+    <meta property="twitter:creator" content="@wowchemy" />
+  
+  <meta property="og:site_name" content="Academic" />
+  <meta property="og:url" content="https://Zhang-maozhen.github.io/post/secreteshare/" />
+  <meta property="og:title" content="秘密分享 | Academic" />
+  <meta property="og:description" content="记录DH秘密分享方法的了解." /><meta property="og:image" content="https://Zhang-maozhen.github.io/post/secreteshare/featured.png" />
+    <meta property="twitter:image" content="https://Zhang-maozhen.github.io/post/secreteshare/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-11-05T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-06-27T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Zhang-maozhen.github.io/post/secreteshare/"
+  },
+  "headline": "秘密分享",
+  
+  "image": [
+    "https://Zhang-maozhen.github.io/post/secreteshare/featured.png"
+  ],
+  
+  "datePublished": "2022-11-05T00:00:00Z",
+  "dateModified": "2022-06-27T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Zhang Maozhen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Academic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Zhang-maozhen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "记录DH秘密分享方法的了解."
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>秘密分享 | Academic</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="e1139dd5663e5007653fb908c39a3f56" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Academic</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Academic</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#talks"><span>Talks</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>秘密分享</h1>
+
+  
+  <p class="page-subtitle">秘密分享数学定义介绍</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Zhang Maozhen</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jun 27, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/mpc/">MPC</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header container featured-image-wrapper mt-4 mb-4" style="max-width: 701px; max-height: 238px;">
+  <div style="position: relative">
+    <img src="/post/secreteshare/featured_hufa80d87505fc2caf88c12701bdfd4f56_113007_1200x2500_fit_q75_h2_lanczos_3.webp" width="701" height="238" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="https://unsplash.com/photos/CpkOjOcXdUY" target="_blank" rel="noopener"><strong>Unsplash</strong></a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="heading"></h1>
+<h1 id="秘密共享">秘密共享</h1>
+<p>Secret Sharing</p>
+<p>有一个秘密，及整数$D$，不希望泄漏。目前有$N$个人，将$D$进行随机切分并分给$N$个人，需要用到信息时就将$N$个部分信息聚合到一起，解密出$D$的值。</p>
+<blockquote>
+<p>这种方案比较脆弱，如果一方不再，那么该秘密无法解密。</p>
+</blockquote>
+<p>为了健壮性，设计了一种新的模式，该模式下不需要所有人一起解密，只需要$K$个人，其中$1\le K\le N$。</p>
+<blockquote>
+<p>该方法发表在19179年的《ACM Communication》上，作者是Shamir（RSA发明者之一，图灵奖获得者）</p>
+<p>该方法称为：门限秘密共享方案（threshold secret sharing scheme）</p>
+</blockquote>
+<p>所以秘密分享可以分为两类：</p>
+<ul>
+<li>严格的秘密分享，所有人存在才可解密</li>
+<li>阈值的秘密分享，满足阈值的人数即可解密</li>
+</ul>
+<h2 id="严格秘密共享">严格秘密共享</h2>
+<p>Additive Secret Sharing 加法秘密共享</p>
+<p>计算逻辑：</p>
+<ul>
+<li>用户A和用户B作为数据持有方，用户C需要知道用户A和用户B的和，但是A和B不想告知C各自持有的值。</li>
+<li>选择$N$个分片Server（可以是第三方），用户A和用户B各自将持有的$x$和$y$随机切分成$N$份${[<input checked="" disabled="" type="checkbox"> ]_1,&hellip;[<input checked="" disabled="" type="checkbox"> ]_n}$和${[[y]]_1,&hellip;,[[y]]_n }$，并分配给第三方$S_1,&hellip;,S_n$.</li>
+<li>用户C请求三方计算$N$个分片的和，$[[z]]_1=[<input checked="" disabled="" type="checkbox"> ]_1+[[y]]_1,&hellip;,[[z]]_n=[<input checked="" disabled="" type="checkbox"> ]_n+[[y]]_n$</li>
+<li>用户C收集$N$个分片参与者的$[[z]]_1,&hellip;[[z]]_n$，并计算求和</li>
+</ul>
+<p>Mulplication On Two Additive Shares 使用随机数添加的乘法运算</p>
+<p>协议算法：摘自论文 STR: Secure Computation on Additive Shares Using the Share-Transform-Reveal Strategy</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20220816160636303.png" alt="image-20220816160636303" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>计算逻辑</p>
+<ul>
+<li>
+<p>用户A和用户B作为数据的持有方，用户C需要知道用户A和用户B的数字乘积，但A和B并不想告知C</p>
+</li>
+<li>
+<p>选择$N$个分片Server（可以是第三方），用户A和用户B各自将持有的$x$和$y$随机切分成$N$份${[<input checked="" disabled="" type="checkbox"> ]_1,&hellip;[<input checked="" disabled="" type="checkbox"> ]_n}$和${[[y]]_1,&hellip;,[[y]]_n }$，并分配给第三方$S_1,&hellip;,S_n$.</p>
+</li>
+<li>
+<p>需要一个随机添加的两个数字$a$和$b$，以及$ab$的乘积$c$，可以由三方提供，用户ABC都不知晓</p>
+</li>
+<li>
+<p>选择同样的$N$个分片，并且添加的数字$a、b、c$随机切分为$N$份，${[[a]]_1,&hellip;[[a]]_n}$、${[[b]]_1,&hellip;,[[b]]_n }$和${[[c]]_1,&hellip;,[[c]]_n }$，分配给$S_1,S_2,&hellip;,S_n$</p>
+</li>
+<li>
+<p>对公式$z=x\cdot y$，进行转换</p>
+<p>$z=x\cdot y=(x-a+a)(y-b+b)=(e+a)(f+b)=e\cdot f+e\cdot b+f\cdot a+a\cdot b$</p>
+<p>其中有：$e=x-a、f=y-b$</p>
+</li>
+<li>
+<p>用户C通过参与者分片Server联合计算出$e、f$，这时的$e、f$属于公开数字。</p>
+<p>各个分片计算$[[e]]_i=[[x]]_i-[[a]]_i$，然后用户C进行求和，求解$e$，</p>
+<p>各个分片计算$[[f]]_i=[[y]]_i-[[b]]_i$，然后用户C进行求和，求解$f$</p>
+</li>
+<li>
+<p>对于最终的求解</p>
+<p>$z=xy=e\cdot f+e\cdot b+f\cdot a + a\cdot b$</p>
+<p>这需要各个参与者分片Server计算公开值</p>
+<p>$e\cdot f$，两个公开的数字乘积，无需参与者分片Server的联合计算即可解密数据。</p>
+<p>$e\cdot b$，一个公开的数字乘一个秘密数字，需要每个分片乘以公开数字，即每个参与者计算$[[b]]_i\cdot e$然后用户C进行汇总求和，即可获取解密数据</p>
+<p>$f\cdot a$，同上，计算$[[a]]_i\cdot f$</p>
+<p>$a\cdot b$，即$c$ 的值，由于$c$的值通过秘密分享的方式给参与者分片，只需要通过假发密钥分享即可获取，各个分片的$[[c]]_i$给用户C汇总求和</p>
+<p>最后$C$将获得的上述部分进行累加，就获取了用户A与用户B各自持有数字的乘积，而没有泄露用户A与用户B的具体值。</p>
+</li>
+</ul>
+<p>复杂运算</p>
+<p>从<code>Additive Secret Sharing </code>和<code>Mulplication On Two Additive Shares</code>实现了基于<code>SS</code>的加法与乘法的秘密分享，那么理论山基于加法和乘法可以计算出其他所有运算，包括指数、对数计算。</p>
+<img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20220817095442461.png" alt="image-20220817095442461" style="zoom:50%;" />
+<img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20220817095454896.png" alt="image-20220817095454896" style="zoom:50%;" />
+<img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20220817102717985.png" alt="image-20220817102717985" style="zoom:50%;" />
+<img src="https://mz-pico-1311932519.cos.ap-nanjing.myqcloud.com/image/image-20220817102728296.png" alt="image-20220817102728296" style="zoom:50%;" />
+<h2 id="阈值秘密分享">阈值秘密分享</h2>
+<p>阈值秘密分享的基本思路是，基于秘密分享的便携性与安全性的考量，如果有$n$个秘密分片，我们只需要$K(1\le K\le n)$，将它们手中的信息拼凑起来，就可以获取秘密。</p>
+<p>做到这一点需要考虑的问题：</p>
+<ul>
+<li>随机性：挑选的$k$个人，需要时随机挑选的$k$个人，不能是一个固定的选取</li>
+<li>必然性：随机挑选的$k$个人，能够将需要的数字进行解密</li>
+</ul>
+<blockquote>
+<p>什么技术可以实现？</p>
+<p>线性代数中，$k$个参与者，相当于$k$个变量，那么需要$k$个方程就可以解出</p>
+</blockquote>
+<p>计算逻辑</p>
+<p>秘密数字：$D$</p>
+<p>参与方：$n$个参与者，$D_1,D_2,&hellip;,D_n$</p>
+<p>一个大的素数，$p$，约束这个素数要大于$D$和$n$</p>
+<ul>
+<li>
+<p>首先，构造出$n$个方程式，构造公式$D_i=q(i)=\sum_{j=0}^{j=k-1}a_i*i^j$,【来源自文章How to Share a Secret 】</p>
+<p>就是使用多项式操作</p>
+</li>
+<li>
+<p>公式展开
+$$
+D_i=q(i)=D+a_1*i+&hellip;+a_{k-1}*i^{k-1}
+$$
+其中$a_0=D$</p>
+</li>
+<li>
+<p>公式举例（假设$k$为3，$n$为10）</p>
+<p>$D_1=q(1)=D+a_1+a_2,其中a_0=D$</p>
+<p>$D_2=q(2)=D+2a_1+4a_2,其中a_0=D$</p>
+<p>​                                   &hellip;</p>
+<p>$D_{10}=q(10)=D+10a_1+100a_2,其中a_0=D$</p>
+</li>
+<li>
+<p>然后，目前的方程组里面，还有$a_1\sim a_{k-1}$的$K-1$个变量，那么这几个变量如何获取呢</p>
+<p>根据Adi Shamir在ACM发布的《How to share a Secret》的描述：</p>
+<blockquote>
+<p>The coefficients $a_1,&hellip;,a_{k-1}$ in $q(x)$ are randomly chosen from a uniform distribution over the integers in $[0, p)$,</p>
+</blockquote>
+<p>即在$[0,p)$均匀分布的范围中随机获取。</p>
+</li>
+<li>
+<p>原始文章中对$D_1,D_2,..,D_n$进行了约束是大素数的取模，这个大素数$p$的作用更多是控制我们选择$a_1\sim a_{k-1}$的大小，防止数据过于膨胀(唯一解的问题，在构造的时候基本可以规避【可自行证明，注：系数行列式不等于零】)</p>
+</li>
+<li>
+<p>最后，将这$n$个方程划给$n$个参与者。需要计算时，只需要将$k$个方程获取进行联合计算就可以计算出$a$，也就是秘密$D。$</p>
+</li>
+</ul>
+<p>例子：</p>
+<p><strong>加密</strong></p>
+<ul>
+<li>
+<p>输入</p>
+<p>秘密数字：$D=88$</p>
+<p>参与方：$10个，D_1,D_2,&hellip;,D_10$</p>
+<p>大素数：$p=991$</p>
+<p>解密阈值：$k=3$</p>
+</li>
+<li>
+<p>加密逻辑</p>
+<p>生成方程组：</p>
+<p>$D_1=q(1)=88+a_1+a_2$</p>
+<p>$D_2=q(2)=88+2a_1+4a_2$</p>
+<p>&hellip;</p>
+<p>$D_{10}=q(10)=88+10a_a+100a_2$</p>
+</li>
+<li>
+<p>基于素数生成$a_1\sim a_{10}$的值，如设定$a_1=1,a_2=2$，即得到$D_1,&hellip;,D_{10}$</p>
+<p>$D_1=91,D_2=98,&hellip;,D_{10}=298$</p>
+</li>
+<li>
+<p>可见此时$D_i，i\le n$均小于素数说991，符合预设，将这10个方程分布发不到10个参与者分片Server</p>
+<p>【分片仅知道$D_i$的值和方程分布】</p>
+</li>
+</ul>
+<p><strong>解密</strong></p>
+<ul>
+<li>
+<p>随机三个参与者，拿出方程组成方程组进行解密，如1，2，10</p>
+<p>$D_1=q(1)=D+a_1+a_2=91$</p>
+<p>$D_2=q(2)=D+2a_1+4a_2=98$</p>
+<p>$D_{10}=q(10)=D+10a_a+100a_2=298$</p>
+</li>
+<li>
+<p>对方程组求解，得到$D,a_1,a_2$的值。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+  
+  <a class="badge badge-light" href="/tag/mpc/">MPC</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://Zhang-maozhen.github.io/post/secreteshare/&amp;text=%e7%a7%98%e5%af%86%e5%88%86%e4%ba%ab" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://Zhang-maozhen.github.io/post/secreteshare/&amp;t=%e7%a7%98%e5%af%86%e5%88%86%e4%ba%ab" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e7%a7%98%e5%af%86%e5%88%86%e4%ba%ab&amp;body=https://Zhang-maozhen.github.io/post/secreteshare/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://Zhang-maozhen.github.io/post/secreteshare/&amp;title=%e7%a7%98%e5%af%86%e5%88%86%e4%ba%ab" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%e7%a7%98%e5%af%86%e5%88%86%e4%ba%ab%20https://Zhang-maozhen.github.io/post/secreteshare/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://Zhang-maozhen.github.io/post/secreteshare/&amp;title=%e7%a7%98%e5%af%86%e5%88%86%e4%ba%ab" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://Zhang-maozhen.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huffcc11260e083ac4fb25532c280cba87_3908728_270x270_fill_q75_lanczos_center.jpg" alt="Zhang Maozhen"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://Zhang-maozhen.github.io/">Zhang Maozhen</a></h5>
+      <h6 class="card-subtitle">Student</h6>
+      <p class="card-text">My research interests include deepfake detection, federatedLearning and differential privacy.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.uk/citations?user=0rJt0NYAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/Zhang-maozhen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2022 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.54dd6e4d8f2e4b1d098381b57f18dd83.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
